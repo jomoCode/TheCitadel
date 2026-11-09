@@ -7,6 +7,9 @@ import { cn } from "@/lib/utils/cn";
 
 export const REGISTER_INTEREST_HREF = `/contact?type=purchase&property=${CITADEL_SLUG}`;
 
+/** Gentle grow-on-hover for hero copy. Left-anchored on mobile, centred from md up; off for reduced-motion users. */
+const HOVER_GROW = "origin-left transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100 md:origin-center";
+
 /**
  * The Citadel, Asokoro — full-bleed dusk photograph with the development's name as the statement headline.
  * Mobile: full viewport height, copy anchored to the bottom for thumb reach.
@@ -21,12 +24,12 @@ export function HeroSection() {
         <span className="inline-flex items-center gap-2 rounded-full border border-[#d4af5a]/70 bg-black/30 px-4 py-1.5 text-[0.7rem] uppercase tracking-[0.2em] text-[#e8cf8f] backdrop-blur-sm">
           <span className="size-1.5 animate-pulse rounded-full bg-[#d4af5a]" aria-hidden /> {citadel.status}
         </span>
-        <h1 className="mt-6 font-hero text-[3.1rem] font-light uppercase leading-[0.95] tracking-[0.08em] sm:text-6xl md:text-7xl lg:text-8xl">
+        <h1 className={cn(HOVER_GROW, "mt-6 font-hero text-[3.1rem] font-light uppercase leading-[0.95] tracking-[0.08em] sm:text-6xl md:text-7xl lg:text-8xl")}>
           {citadel.name}
         </h1>
-        <p className="mt-4 font-display text-xl italic text-[#e8cf8f] md:text-3xl">{citadel.tagline}</p>
-        <p className="text-eyebrow mt-4 text-white/80">{citadel.place}</p>
-        <p className="mt-6 max-w-lg text-sm leading-relaxed text-white/85 md:mx-auto md:text-base">
+        <p className={cn(HOVER_GROW, "mt-4 font-display text-xl italic text-[#e8cf8f] md:text-3xl")}>{citadel.tagline}</p>
+        <p className={cn(HOVER_GROW, "text-eyebrow mt-4 text-white/80")}>{citadel.place}</p>
+        <p className={cn(HOVER_GROW, "mt-6 max-w-lg text-sm leading-relaxed text-white/85 md:mx-auto md:text-base")}>
           Eight three-bedroom residences on the hilltop of Asokoro — Abuja’s diplomatic enclave.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row md:justify-center">
