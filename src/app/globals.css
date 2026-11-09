@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Dark mode is driven by next-themes adding `.dark` to <html> (system preference by default). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7f5f1;
+  --surface: #ffffff;
+  --surface-muted: #efebe4;
+  --foreground: #141210;
+  --muted-foreground: #6b645c;
+  --border: #e2dcd2;
+  --gold: #a8833a;
+  --gold-soft: rgb(168 131 58 / 0.1);
+  --primary: #141210;
+  --primary-foreground: #f7f5f1;
+  --success: #3f7d58;
+  --warning: #b7791f;
+  --danger: #b23b3b;
+  --info: #3b6ea8;
+  --scrim: rgb(10 8 6 / 0.55);
+  --radius: 6px;
+}
+
+.dark {
+  --background: #140e0c;
+  --surface: #1e1613;
+  --surface-muted: #261c18;
+  --foreground: #f4ede3;
+  --muted-foreground: #a8998a;
+  --border: #33261f;
+  --gold: #d4af5a;
+  --gold-soft: rgb(212 175 90 / 0.12);
+  --primary: #f4ede3;
+  --primary-foreground: #140e0c;
+  --success: #6fbf8e;
+  --warning: #e0a94a;
+  --danger: #e07a7a;
+  --info: #7fa9db;
+  --scrim: rgb(10 8 6 / 0.65);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --color-scrim: var(--scrim);
+  --radius-brand: var(--radius);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
+  --font-hero: var(--font-cormorant);
+  --font-label: var(--font-montserrat);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  * {
+    border-color: var(--border);
+  }
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-eyebrow {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .text-nav {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .container-lux {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-lux {
+      padding-inline: 2.5rem;
+    }
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 18s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

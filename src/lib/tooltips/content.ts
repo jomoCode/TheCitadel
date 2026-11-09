@@ -1,0 +1,20 @@
+/** Plain-language explanations for the journal, site content, search engines and insights. */
+export const contentTips = {
+  "journal.overview": "Articles for the Journal section of your website. Write as a draft, then publish now or schedule a time.",
+  "journal.blocks": "Build the article from blocks: paragraphs, headings, bullet lists, quotes and photos. Use the arrows to move a block up or down.",
+  "journal.excerpt": "Two or three sentences shown under the headline and on article cards. Also used for Google if you don't write a search description.",
+  "journal.cover": "The large photo at the top of the article and on its card. Landscape photos work best.",
+  "journal.tags": "Short topic words, separated by commas, e.g. “Abuja, Buying tips”. Readers can click a tag to see related articles.",
+  "journal.schedule": "Pick a date and time and the article goes live by itself — no need to come back.",
+  "journal.unpublish": "Takes the article off the website and turns it back into a draft. Nothing is deleted.",
+  "site.contact": "Shown in the website footer, the contact page and on call buttons. Changes appear within about a minute.",
+  "site.faqs": "Questions and answers shown on the FAQs page. Hidden questions stay here but don't appear on the website.",
+  "site.testimonials": "Quotes from real clients. Only add one if the person has agreed to it being published. New ones start hidden.",
+  "seo.overview": "What Google and social apps show for each page. Leave a box empty to keep the website's built-in text.",
+  "seo.title": "The clickable headline in Google results. Aim for under 60 characters, with the most important words first.",
+  "seo.description": "The short text under the headline in Google results. Aim for 120–155 characters.",
+  "insights.overview": "How people find and use your website, counted by the website itself. No cookies or personal data are used.",
+  "insights.visitors": "Different devices that visited. One person on a phone and a laptop counts twice.",
+  "insights.rate": "Out of every 100 visitors, how many sent an enquiry.",
+  "insights.source": "Where people were just before they enquired — for example a Google ad, Instagram, or typing the address directly.",
+} as const;
