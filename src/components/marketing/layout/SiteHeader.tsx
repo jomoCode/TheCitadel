@@ -21,7 +21,7 @@ export function SiteHeader() {
       )}
     >
       <div className="container-lux flex h-16 items-center justify-between md:h-20">
-        <BrandMark />
+        <BrandMark tone={transparent ? "onDark" : "auto"} />
 
         <nav aria-label="Main" className="hidden items-center gap-8 lg:flex">
           {mainNav.map((item) => (

@@ -28,7 +28,7 @@ export async function SiteFooter() {
     <footer className="bg-[#140e0c] text-[#f4ede3]">
       <div className="container-lux grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
         <div className="space-y-5">
-          <BrandMark className="items-start" />
+          <BrandMark tone="onDark" className="items-start" />
           <p className="max-w-xs text-sm leading-relaxed text-[#a8998a]">{siteConfig.description}</p>
           <address className="space-y-1 text-sm not-italic text-[#d9cfc2]">
             <p>{contact.address}</p>

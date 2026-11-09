@@ -9,6 +9,7 @@ import { buttonVariants } from "@/components/ui/Button";
 import { mainNav } from "@/content/marketing/site";
 import { telHref, useSiteSettings } from "@/features/marketing/context/SiteSettingsContext";
 import { cn } from "@/lib/utils/cn";
+import { BrandLogo } from "./BrandMark";
 
 /** Full-screen menu for phones and tablets — large serif links, thumb-friendly spacing. */
 export function MobileMenu() {
@@ -25,7 +26,7 @@ export function MobileMenu() {
         <Dialog.Content className="fixed inset-0 z-50 flex flex-col bg-background text-foreground focus:outline-none">
           <Dialog.Title className="sr-only">Menu</Dialog.Title>
           <div className="container-lux flex h-16 items-center justify-between">
-            <span className="font-label text-[0.6rem] tracking-[0.5em]">CITADEL</span>
+            <BrandLogo />
             <Dialog.Close aria-label="Close menu" className="inline-flex size-10 items-center justify-center">
               <X className="size-5" aria-hidden />
             </Dialog.Close>
