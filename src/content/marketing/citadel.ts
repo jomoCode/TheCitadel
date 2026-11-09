@@ -16,12 +16,36 @@ export const citadel = {
   detail:
     "Opposite the Embassy of Israel on Mary Slessor Street, The Citadel pairs the capital’s most protected address with the calm of a boutique, residents-only development: a landscaped swimming pool deck, a concierge-served secured lobby, a residents’ gym, and green areas with a children’s playground. Eight residences only — luxury in peace and comfort, by design.",
   residences: [
-    { label: "Residences", value: "Eight three-bedroom apartments", note: "En-suite throughout, each with domestic quarters (boys’ quarters)" },
-    { label: "Premium residences", value: "≈ 217 m²", note: "Approximately 217 square metres" },
-    { label: "Parking", value: "Two bays", note: "Two dedicated bays for each residence" },
-    { label: "Access", value: "Lift to all floors", note: "Concierge, secured lobby and security post" },
-    { label: "Amenities", value: "Pool, gym & play area", note: "Swimming pool with landscaped deck; indoor gym; green area with children’s playground" },
-    { label: "Availability", value: "Limited release", note: "A limited release of Premium residences is offered for sale" },
+    {
+      label: "Residences",
+      value: "Eight Three-Bedroom apartments",
+      note: "En-suite throughout, each with domestic quarters (boys’ quarters)",
+    },
+    {
+      label: "Premium residences",
+      value: "≈ 217 m²",
+      note: "Approximately 217 square metres",
+    },
+    {
+      label: "Parking",
+      value: "Two Bays",
+      note: "Two dedicated bays for each residence",
+    },
+    {
+      label: "Access",
+      value: "Lift to all Floors",
+      note: "Concierge, secured lobby and security post",
+    },
+    {
+      label: "Amenities",
+      value: "Pool, Gym & Play Area",
+      note: "Swimming pool with landscaped deck; indoor gym; green area with children’s playground",
+    },
+    {
+      label: "Availability",
+      value: "Limited Release",
+      note: "A limited release of Premium residences is offered for sale",
+    },
   ],
   address: "15 Mary Slessor Street, Asokoro, Abuja",
   location:
@@ -40,14 +64,38 @@ export const citadel = {
   promise: "Quality assured!",
   /** Architectural renders. [0] is the home hero, [1] the home showcase; the full set is the offline listing gallery. */
   images: [
-    { src: "/images/citadel/entrance-sign.jpg", alt: "The Citadel entrance and stone signage wall (architectural render)" },
-    { src: "/images/citadel/facade-corner.jpg", alt: "The Citadel from the street corner, five storeys with roof terrace (architectural render)" },
-    { src: "/images/citadel/facade-front.jpg", alt: "Front elevation of The Citadel with palm-lined entrance (architectural render)" },
-    { src: "/images/citadel/facade-side.jpg", alt: "The Citadel's balconies and timber-clad facade (architectural render)" },
-    { src: "/images/citadel/entrance-gate.jpg", alt: "Gated car entrance beneath the residences (architectural render)" },
-    { src: "/images/citadel/pool-loungers.jpg", alt: "Pool deck with sun loungers and outdoor lounge (architectural render)" },
-    { src: "/images/citadel/pool-deck.jpg", alt: "Private pool and timber deck framed by mature trees (architectural render)" },
-    { src: "/images/citadel/covered-parking.jpg", alt: "Covered residents' parking with timber ceiling (architectural render)" },
+    {
+      src: "/images/citadel/entrance-sign.jpg",
+      alt: "The Citadel entrance and stone signage wall (architectural render)",
+    },
+    {
+      src: "/images/citadel/facade-corner.jpg",
+      alt: "The Citadel from the street corner, five storeys with roof terrace (architectural render)",
+    },
+    {
+      src: "/images/citadel/facade-front.jpg",
+      alt: "Front elevation of The Citadel with palm-lined entrance (architectural render)",
+    },
+    {
+      src: "/images/citadel/facade-side.jpg",
+      alt: "The Citadel's balconies and timber-clad facade (architectural render)",
+    },
+    {
+      src: "/images/citadel/entrance-gate.jpg",
+      alt: "Gated car entrance beneath the residences (architectural render)",
+    },
+    {
+      src: "/images/citadel/pool-loungers.jpg",
+      alt: "Pool deck with sun loungers and outdoor lounge (architectural render)",
+    },
+    {
+      src: "/images/citadel/pool-deck.jpg",
+      alt: "Private pool and timber deck framed by mature trees (architectural render)",
+    },
+    {
+      src: "/images/citadel/covered-parking.jpg",
+      alt: "Covered residents' parking with timber ceiling (architectural render)",
+    },
   ],
 } as const;
 
@@ -67,8 +115,14 @@ export const citadelListing: Property = {
   completion: "",
   paymentPlan: false,
   featured: true,
-  summary: "A private collection of just eight three-bedroom residences on the hilltop of Asokoro, Abuja’s diplomatic enclave.",
-  description: [citadel.intro, citadel.detail, citadel.location, citadel.developer],
+  summary:
+    "A private collection of just eight three-bedroom residences on the hilltop of Asokoro, Abuja’s diplomatic enclave.",
+  description: [
+    citadel.intro,
+    citadel.detail,
+    citadel.location,
+    citadel.developer,
+  ],
   features: [
     "Three bedrooms, en-suite throughout",
     "Domestic quarters (boys’ quarters) with every residence",
@@ -86,6 +140,7 @@ export const citadelListing: Property = {
   images: citadel.images.map((i) => ({ ...i })),
   seo: {
     title: "The Citadel, Asokoro — Luxury Three-Bedroom Residences in Abuja",
-    description: "Eight en-suite three-bedroom residences with domestic quarters on Mary Slessor Street, Asokoro — Abuja’s diplomatic enclave. Now selling.",
+    description:
+      "Eight en-suite three-bedroom residences with domestic quarters on Mary Slessor Street, Asokoro — Abuja’s diplomatic enclave. Now selling.",
   },
 };

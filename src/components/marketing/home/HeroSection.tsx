@@ -30,7 +30,7 @@ export function HeroSection() {
         <p className={cn(HOVER_GROW, "mt-4 font-display text-xl italic text-[#e8cf8f] md:text-3xl")}>{citadel.tagline}</p>
         <p className={cn(HOVER_GROW, "text-eyebrow mt-4 text-white/80")}>{citadel.place}</p>
         <p className={cn(HOVER_GROW, "mt-6 max-w-lg text-sm leading-relaxed text-white/85 md:mx-auto md:text-base")}>
-          Eight three-bedroom residences on the hilltop of Asokoro — Abuja’s diplomatic enclave.
+          Eight Three-Bedroom residences on the hilltop of Asokoro — Abuja’s diplomatic enclave.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row md:justify-center">
           <Link href={REGISTER_INTEREST_HREF} className={cn(buttonVariants({ variant: "gold", size: "lg" }))}>Register your interest</Link>
