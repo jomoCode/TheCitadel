@@ -16,7 +16,7 @@ export function WhyCitadel() {
     <section className="py-20 md:py-28">
       <div className="container-lux grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
         <Reveal className="relative order-2 aspect-[4/5] overflow-hidden rounded-brand lg:order-1">
-          <Image src="/images/hero/interior-lounge.jpg" alt="Calm, light-filled living room" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+          <Image src="/images/citadel/pool-loungers.jpg" alt="Pool deck with sun loungers and outdoor lounge at The Citadel" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
         </Reveal>
         <div className="order-1 lg:order-2">
           <SectionHeading eyebrow="Why The Citadel" title="Luxury in peace and comfort," highlight="by design." />
