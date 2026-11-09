@@ -6,7 +6,7 @@ export const guides: Guide[] = [
     title: "How to buy a Citadel home",
     intro:
       "Buying a home should feel exciting, not confusing. Here is exactly what happens, step by step, from your first call to the day you receive your keys.",
-    image: { src: "/images/guides/buy.jpg", alt: "Bright, elegant living room" },
+    image: { src: "/images/citadel/facade-corner.jpg", alt: "The Citadel from the street corner (architectural render)" },
     enquiryType: "purchase",
     steps: [
       { title: "Talk to an adviser", body: "Tell us your budget, preferred area and timeline. We shortlist homes that genuinely fit — no pressure." },
@@ -21,7 +21,7 @@ export const guides: Guide[] = [
     slug: "how-to-rent",
     title: "How to rent with Citadel",
     intro: "Many of our owners let their homes through us. Renting is straightforward, transparent and fully managed.",
-    image: { src: "/images/guides/rent.jpg", alt: "Calm furnished bedroom" },
+    image: { src: "/images/citadel/entrance-gate.jpg", alt: "The Citadel entrance and gated parking (architectural render)" },
     enquiryType: "rental",
     steps: [
       { title: "Share what you need", body: "Tell us the area, number of bedrooms, move-in date and budget." },
@@ -35,7 +35,7 @@ export const guides: Guide[] = [
     title: "Sell or develop your land with us",
     intro:
       "Own land in Abuja? We buy land outright or partner with landowners to develop it, and we are transparent about value every step of the way.",
-    image: { src: "/images/guides/land.jpg", alt: "Open green land under a wide sky" },
+    image: { src: "/images/citadel/facade-side.jpg", alt: "The Citadel balconies and timber-clad facade (architectural render)" },
     enquiryType: "landowner",
     steps: [
       { title: "Tell us about the land", body: "Share its location, size and the title documents you hold." },

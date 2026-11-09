@@ -8,8 +8,8 @@ export async function ContactCta() {
   const { contact } = await loadSiteSettings();
   return (
     <section className="relative isolate overflow-hidden py-24 text-white md:py-36">
-      <Image src="/images/hero/hero-buildings-dusk.jpg" alt="" fill sizes="100vw" className="-z-20 object-cover" />
-      <div className="absolute inset-0 -z-10 bg-black/55" />
+      <Image src="/images/citadel/facade-front.jpg" alt="" fill sizes="100vw" className="-z-20 object-cover" />
+      <div className="absolute inset-0 -z-10 bg-black/60" />
       <div className="container-lux text-center">
         <p className="text-eyebrow text-white/80">Private viewings</p>
         <h2 className="mx-auto mt-5 max-w-3xl font-hero text-4xl font-light uppercase leading-tight tracking-[0.05em] md:text-6xl">
