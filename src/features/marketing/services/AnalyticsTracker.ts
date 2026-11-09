@@ -10,27 +10,37 @@ export type BusinessEvent =
   | "referral_submitted";
 
 type GtagFn = (command: "event", name: string, params?: Record<string, unknown>) => void;
+type AnalyticsWindow = { gtag?: GtagFn; dataLayer?: Record<string, unknown>[] };
 
 /**
  * Sends important business events to two places (PRD §12.2):
- * Google Analytics 4 for traffic insight, and our own backend for reliable business records.
- * Tracking must never break the page, so every failure is swallowed.
+ * Google (Tag Manager's dataLayer when NEXT_PUBLIC_GTM_ID is set, otherwise GA4's gtag) for traffic insight,
+ * and our own backend for reliable business records. Tracking must never break the page, so every failure is swallowed.
  */
 export class AnalyticsTracker {
-  constructor(private readonly api: ApiClient = apiClient) {}
+  constructor(
+    private readonly api: ApiClient = apiClient,
+    private readonly useTagManager: boolean = Boolean(process.env.NEXT_PUBLIC_GTM_ID),
+  ) {}
 
   track(event: BusinessEvent, properties: Record<string, string | number | undefined> = {}): void {
-    this.sendToGa(event, properties);
+    this.sendToGoogle(event, properties);
     void this.api
       .post("/public/events", { event, properties, path: typeof window === "undefined" ? undefined : window.location.pathname })
       .catch(() => undefined);
   }
 
-  private sendToGa(event: string, properties: Record<string, unknown>) {
+  private sendToGoogle(event: string, properties: Record<string, unknown>) {
     if (typeof window === "undefined") return;
-    const gtag = (window as unknown as { gtag?: GtagFn }).gtag;
+    const w = window as unknown as AnalyticsWindow;
     try {
-      gtag?.("event", event, properties);
+      if (this.useTagManager) {
+        // Tag Manager reads custom events from the dataLayer; use "Custom Event" triggers with these names.
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayer.push({ event, ...properties });
+      } else {
+        w.gtag?.("event", event, properties);
+      }
     } catch {
       /* analytics is best-effort */
     }

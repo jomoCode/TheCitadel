@@ -2,6 +2,7 @@ import { SiteFooter } from "@/components/marketing/layout/SiteFooter";
 import { SiteHeader } from "@/components/marketing/layout/SiteHeader";
 import { AttributionCapture } from "@/components/marketing/layout/AttributionCapture";
 import { GoogleAnalytics } from "@/components/marketing/layout/GoogleAnalytics";
+import { GoogleTagManager } from "@/components/marketing/layout/GoogleTagManager";
 import { PageViewTracker } from "@/components/marketing/layout/PageViewTracker";
 import { SiteSettingsProvider } from "@/features/marketing/context/SiteSettingsContext";
 import { loadSiteSettings } from "@/features/marketing/services/ContentSource";
@@ -19,7 +20,7 @@ export default async function MarketingLayout({ children }: { children: React.Re
       </main>
       <SiteFooter />
       <AttributionCapture />
-      <GoogleAnalytics />
+      {process.env.NEXT_PUBLIC_GTM_ID ? <GoogleTagManager /> : <GoogleAnalytics />}
       <PageViewTracker />
     </SiteSettingsProvider>
   );
