@@ -1,4 +1,8 @@
-const nairaFull = new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 });
+const nairaFull = new Intl.NumberFormat("en-NG", {
+  style: "currency",
+  currency: "NGN",
+  maximumFractionDigits: 0,
+});
 
 /** ₦185,000,000 */
 export function formatNaira(amount: number): string {
@@ -14,8 +18,11 @@ export function formatNairaCompact(amount: number): string {
 }
 
 /** A price of 0 means the developer hasn't published one: "Price on request". */
-export function priceLabel(amount: number, { compact = false, from = false }: { compact?: boolean; from?: boolean } = {}): string {
-  if (amount <= 0) return "Price on request";
+export function priceLabel(
+  amount: number,
+  { compact = false, from = false }: { compact?: boolean; from?: boolean } = {},
+): string {
+  if (amount <= 0) return "Price on Request";
   const value = compact ? formatNairaCompact(amount) : formatNaira(amount);
   return from ? `from ${value}` : value;
 }
@@ -26,11 +33,16 @@ function trimZero(value: number): string {
 
 /** 28 October 2026 */
 export function formatLongDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  return new Date(iso).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 }
 
 /** "Studio" for 0, "3-bed" otherwise; ranges become "Studio – 4-bed". */
 export function formatBedrooms(min: number, max: number): string {
-  const label = (n: number) => (n === 0 ? "Studio" : `${n}-bed`);
+  const label = (n: number) => (n === 0 ? "Studio" : `${n}-Bed`);
   return min === max ? label(min) : `${label(min)} – ${label(max)}`;
 }

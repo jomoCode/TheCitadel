@@ -39,7 +39,7 @@ export const citadel = {
     {
       label: "Amenities",
       value: "Pool, Gym & Play Area",
-      note: "Swimming pool with landscaped deck; indoor gym; green area with children’s playground",
+      note: "Swimming Pool with Landscaped Deck; Indoor Gym; Green area with children’s playground",
     },
     {
       label: "Availability",
@@ -53,7 +53,7 @@ export const citadel = {
   distances: [
     { place: "Embassy of Israel", time: "Opposite" },
     { place: "Maitama", time: "8–12 minutes" },
-    { place: "Wuse 2 dining and retail", time: "10–15 minutes" },
+    { place: "Wuse 2 Dining and Retail", time: "10–15 minutes" },
     { place: "Central Business District", time: "10–18 minutes" },
     { place: "Transcorp Hilton", time: "About 15 minutes" },
     { place: "Nnamdi Azikiwe International Airport", time: "30–45 minutes" },
@@ -131,7 +131,7 @@ export const citadelListing: Property = {
     "Lift serving all floors",
   ],
   amenities: [
-    "Swimming pool with landscaped deck",
+    "Swimming Pool with landscaped deck",
     "Indoor residents’ gym",
     "Green area with children’s playground",
     "Concierge and secured lobby",

@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function ReferralPage() {
   const { heroImage, commission, steps, terms } = referralContent;
   return (
-    <>
+    <div className="pt-16 md:pt-20">
       <PhotoHero image={heroImage} eyebrow="Referral programme" title="Earn as you refer.">
         <p className="mt-4 flex max-w-xl items-center gap-1 text-sm text-white/85 md:text-base">
           Introduce someone who buys a Citadel home and earn {commission} of the sale value.
@@ -52,6 +52,6 @@ export default function ReferralPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 /** Pages that open with a full-bleed photograph, where the header floats transparently over the image. */
 const OVERLAY_PREFIXES = ["/properties/", "/guides/"];
-const OVERLAY_EXACT = new Set(["/", "/about", "/referral"]);
+const OVERLAY_EXACT = new Set(["/", "/about"]);
 
 export function isOverlayRoute(pathname: string): boolean {
   return OVERLAY_EXACT.has(pathname) || OVERLAY_PREFIXES.some((prefix) => pathname.startsWith(prefix));
