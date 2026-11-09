@@ -1,3 +1,5 @@
+import { apiBaseUrl } from "@/lib/config/apiBaseUrl";
+
 /** Error carrying the backend's code, friendly message and debug location (e.g. "bills.py/create_bill():42"). */
 export class ApiError extends Error {
   constructor(
@@ -20,7 +22,12 @@ type Query = Record<string, string | number | boolean | null | undefined>;
 export class ApiClient {
   private tokenProvider: () => string | null = () => null;
 
-  constructor(private readonly baseUrl: string) {}
+  /** `base` may be a function so the address is read from the environment when first used, not at import. */
+  constructor(private readonly base: string | (() => string)) {}
+
+  private get baseUrl(): string {
+    return typeof this.base === "function" ? this.base() : this.base;
+  }
 
   /** Set by AuthProvider so every request carries the current access token. */
   setTokenProvider(provider: () => string | null): void {
@@ -129,4 +136,4 @@ function withQuery(path: string, query?: Query): string {
   return qs ? `${path}?${qs}` : path;
 }
 
-export const apiClient = new ApiClient(process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1");
+export const apiClient = new ApiClient(apiBaseUrl);

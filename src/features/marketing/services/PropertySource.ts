@@ -1,6 +1,6 @@
 import { cache } from "react";
 import { citadelListing } from "@/content/marketing/citadel";
-import { bundledFallbackEnabled } from "@/lib/api/publicFetch";
+import { bundledFallbackEnabled, publicFetch } from "@/lib/api/publicFetch";
 import type { Property, PropertyStatus } from "../types";
 import { PropertyCatalog } from "./PropertyCatalog";
 
@@ -44,18 +44,8 @@ export function fallbackProperties(): Property[] {
 
 /** Server-side only. De-duplicated per request (React cache) and cached across requests by Next for a minute. */
 export const loadProperties = cache(async (): Promise<Property[]> => {
-  const base = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
-  try {
-    const response = await fetch(`${base}/public/properties`, {
-      next: { revalidate: PROPERTY_REVALIDATE_SECONDS, tags: ["properties"] },
-      signal: AbortSignal.timeout(5_000),
-    });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return ((await response.json()) as ApiProperty[]).map(fromApi);
-  } catch (error) {
-    console.error(`PropertySource.ts/loadProperties(): could not load listings from ${base} — ${String(error)}`);
-    return fallbackProperties();
-  }
+  const rows = await publicFetch<ApiProperty[] | null>("/public/properties", () => null, "properties");
+  return rows ? rows.map(fromApi) : fallbackProperties();
 });
 
 export const loadCatalog = async () => new PropertyCatalog(await loadProperties());
