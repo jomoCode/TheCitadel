@@ -11,14 +11,14 @@ export const REGISTER_INTEREST_HREF = `/contact?type=purchase&property=${CITADEL
 const HOVER_GROW = "origin-left transition-transform duration-500 ease-out hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100 md:origin-center";
 
 /**
- * The Citadel, Asokoro — full-bleed dusk photograph with the development's name as the statement headline.
+ * The Citadel, Asokoro — full-bleed architectural render of the entrance with the development's name as the statement headline.
  * Mobile: full viewport height, copy anchored to the bottom for thumb reach.
  */
 export function HeroSection() {
   return (
     <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden text-white md:items-center">
       <Image src={citadel.images[0].src} alt={citadel.images[0].alt} fill priority sizes="100vw" className="animate-kenburns -z-20 object-cover" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/30 to-black/45" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/45 to-black/55" />
 
       <div className="container-lux pb-24 pt-32 md:pb-0 md:text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-[#d4af5a]/70 bg-black/30 px-4 py-1.5 text-[0.7rem] uppercase tracking-[0.2em] text-[#e8cf8f] backdrop-blur-sm">

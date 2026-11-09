@@ -38,12 +38,16 @@ export const citadel = {
     "The Citadel is developed by Quo Engineering & Construction Limited, a luxury brand promoted by the principals of Houses for Africa Nigeria Limited and Mobus Property Nigeria Limited — the team behind River Park Estate in Abuja and award-winning luxury developments in Accra.",
   developerName: "Quo Engineering & Construction Limited",
   promise: "Quality assured!",
-  /** Placeholder photography until the client supplies renders. */
+  /** Architectural renders. [0] is the home hero, [1] the home showcase; the full set is the offline listing gallery. */
   images: [
-    { src: "/images/hero/hero-buildings-dusk.jpg", alt: "The Citadel at dusk (illustrative image)" },
-    { src: "/images/hero/interior-lounge.jpg", alt: "Residence living room (illustrative image)" },
-    { src: "/images/properties/ivory-2.jpg", alt: "Open-plan living and dining (illustrative image)" },
-    { src: "/images/properties/ivory-3.jpg", alt: "Bedroom suite (illustrative image)" },
+    { src: "/images/citadel/entrance-sign.jpg", alt: "The Citadel entrance and stone signage wall (architectural render)" },
+    { src: "/images/citadel/facade-corner.jpg", alt: "The Citadel from the street corner, five storeys with roof terrace (architectural render)" },
+    { src: "/images/citadel/facade-front.jpg", alt: "Front elevation of The Citadel with palm-lined entrance (architectural render)" },
+    { src: "/images/citadel/facade-side.jpg", alt: "The Citadel's balconies and timber-clad facade (architectural render)" },
+    { src: "/images/citadel/entrance-gate.jpg", alt: "Gated car entrance beneath the residences (architectural render)" },
+    { src: "/images/citadel/pool-loungers.jpg", alt: "Pool deck with sun loungers and outdoor lounge (architectural render)" },
+    { src: "/images/citadel/pool-deck.jpg", alt: "Private pool and timber deck framed by mature trees (architectural render)" },
+    { src: "/images/citadel/covered-parking.jpg", alt: "Covered residents' parking with timber ceiling (architectural render)" },
   ],
 } as const;
 

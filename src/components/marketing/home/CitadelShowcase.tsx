@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/marketing/primitives/Reveal";
 import { EyebrowPill } from "@/components/marketing/primitives/SectionHeading";
+import { CitadelSlideshow } from "./CitadelSlideshow";
 import { CITADEL_SLUG, citadel } from "@/content/marketing/citadel";
 import { keyFigures } from "@/content/marketing/site";
 
@@ -27,9 +27,7 @@ export function CitadelShowcase() {
 
         <Reveal delay={0.15}>
           <figure className="bg-surface p-3 shadow-sm md:p-4">
-            <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[5/4]">
-              <Image src={citadel.images[1].src} alt={citadel.images[1].alt} fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
-            </div>
+            <CitadelSlideshow slides={citadel.images.slice(1)} sizes="(min-width: 1024px) 45vw, 100vw" className="aspect-[4/5] sm:aspect-[5/4]" />
             <figcaption className="flex justify-between pt-3 text-[0.7rem] text-muted-foreground">
               <span>{citadel.name}, Mary Slessor Street</span>
               <span className="text-eyebrow !text-[0.55rem]">{citadel.status}</span>
