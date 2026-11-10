@@ -7,9 +7,9 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        solid: "bg-primary text-primary-foreground hover:opacity-90",
-        gold: "bg-gold text-[#140e0c] hover:brightness-110",
-        outline: "border border-foreground text-foreground hover:bg-foreground hover:text-background",
+        solid: "btn-solid bg-primary text-primary-foreground hover:opacity-90",
+        gold: "btn-gold bg-gold text-[#140e0c] hover:brightness-110",
+        outline: "btn-outline border border-foreground text-foreground hover:bg-foreground hover:text-background",
         ghostLight: "border border-white/70 text-white hover:bg-white hover:text-[#140e0c]",
         link: "px-0 text-foreground underline-offset-8 hover:text-gold hover:underline",
       },
