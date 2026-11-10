@@ -228,6 +228,44 @@
     border-color: var(--app-blue);
     background: var(--app-blue);
   }
+  /* Coloured cards in the app panels. Stat cards and every card-style box on a panel page
+     (anything using bg-surface, except form fields and pills) get a tint; siblings cycle
+     blue → amber → teal → violet → rose so neighbouring cards never share a colour. */
+  .stat-card,
+  .app-aurora .bg-surface:not(input, select, textarea, .rounded-full) {
+    --tone: 37 99 235;
+    --tone-text: #1d4ed8;
+    background:
+      linear-gradient(145deg, rgb(var(--tone) / 0.16), rgb(var(--tone) / 0.04) 70%),
+      var(--surface);
+    border-color: rgb(var(--tone) / 0.3);
+    box-shadow: 0 10px 28px -18px rgb(var(--tone) / 0.7);
+  }
+  :is(.stat-card, .app-aurora .bg-surface):is(a, button):hover {
+    border-color: rgb(var(--tone) / 0.6);
+  }
+  .stat-card .stat-card-label {
+    color: var(--tone-text);
+  }
+  :is(.stat-card, .app-aurora .bg-surface):nth-child(5n + 2) { --tone: 245 158 11; --tone-text: #b45309; }
+  :is(.stat-card, .app-aurora .bg-surface):nth-child(5n + 3) { --tone: 13 148 136; --tone-text: #0f766e; }
+  :is(.stat-card, .app-aurora .bg-surface):nth-child(5n + 4) { --tone: 124 58 237; --tone-text: #6d28d9; }
+  :is(.stat-card, .app-aurora .bg-surface):nth-child(5n + 5) { --tone: 225 29 72; --tone-text: #be123c; }
+  .dark .stat-card { --tone-text: #93b4fb; }
+  .dark .stat-card:nth-child(5n + 2) { --tone-text: #fcd34d; }
+  .dark .stat-card:nth-child(5n + 3) { --tone-text: #5eead4; }
+  .dark .stat-card:nth-child(5n + 4) { --tone-text: #c4b5fd; }
+  .dark .stat-card:nth-child(5n + 5) { --tone-text: #fda4af; }
+  /* Form fields stay neutral; printed pages (receipts, statements) stay plain. */
+  .app-aurora :is(input, select, textarea).bg-surface {
+    background: var(--surface);
+  }
+  @media print {
+    .app-aurora .bg-surface {
+      background: none;
+      box-shadow: none;
+    }
+  }
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     .glass-nav:not(.glass-bar) {
       background: rgb(8 14 32 / 0.88);
