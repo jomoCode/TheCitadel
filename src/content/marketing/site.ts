@@ -30,9 +30,9 @@ export const mainNav = [
     label: "Buy · Rent · Sell",
     href: "/guides/how-to-buy",
     children: [
-      { label: "How to buy", href: "/guides/how-to-buy" },
-      { label: "How to rent", href: "/guides/how-to-rent" },
-      { label: "Sell your land", href: "/guides/sell-your-land" },
+      { label: "HOW TO BUY", href: "/guides/how-to-buy" },
+      { label: "HOW TO RENT", href: "/guides/how-to-rent" },
+      { label: "SELL YOUR LAND", href: "/guides/sell-your-land" },
     ],
   },
   { label: "About", href: "/about" },
