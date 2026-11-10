@@ -70,7 +70,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
   const primary = items.filter((i) => i.primary);
 
   return (
-    <div className="app-aurora min-h-svh lg:pl-[16.5rem] print:pl-0">
+    <div className="app-aurora has-sidebar min-h-svh lg:pl-[16.5rem] print:pl-0">
       <div aria-hidden className="glass-scene fixed inset-y-0 left-0 hidden w-[16.5rem] print:!hidden lg:block" />
       <aside className="glass-nav fixed inset-y-0 left-0 z-30 hidden w-[16.5rem] flex-col border-r border-border px-4 py-6 print:!hidden lg:flex">
         <Link href="/admin" className="px-3">

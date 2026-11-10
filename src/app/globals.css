@@ -109,6 +109,148 @@
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom);
   }
+
+  /* ── App panels (admin / resident / security) only — not the marketing site ──
+     Glassmorphism: a dark "scene" of blue and amber light beams sits behind the nav,
+     and the nav itself is near-clear frosted glass with a bright rim and glowing dividers.
+     Tokens are re-scoped inside .glass-nav so existing text/border/hover utilities just work. */
+  .app-aurora {
+    background-color: var(--background);
+    background-image:
+      radial-gradient(60rem 40rem at -10% -10%, rgb(37 99 235 / 0.1), transparent 60%),
+      radial-gradient(50rem 36rem at 110% 110%, rgb(245 158 11 / 0.08), transparent 60%);
+    background-attachment: fixed;
+    position: relative;
+    isolation: isolate;
+  }
+  /* Logo watermark, fixed and centred behind the page content (offset past the admin sidebar on desktop). */
+  .app-aurora::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url("/brand/quo-logo.png") center / min(70vw, 34rem) auto no-repeat;
+    opacity: 0.05;
+  }
+  .dark .app-aurora::before {
+    background-image: url("/brand/quo-logo-on-dark.png");
+    opacity: 0.06;
+  }
+  @media (min-width: 1024px) {
+    .app-aurora.has-sidebar::before {
+      left: 16.5rem;
+    }
+  }
+  @media print {
+    .app-aurora::before {
+      display: none;
+    }
+  }
+  .glass-scene,
+  .glass-bar {
+    --glass-scene:
+      linear-gradient(135deg, rgb(56 189 248 / 0.95) 0%, rgb(37 99 235 / 0.9) 20%, transparent 20.2%),
+      linear-gradient(135deg, transparent 27%, rgb(251 191 36 / 0.9) 27.2%, rgb(180 83 9 / 0.5) 41%, transparent 41.2%),
+      linear-gradient(135deg, transparent 50%, rgb(37 99 235 / 0.9) 50.2%, rgb(30 27 140 / 0.65) 68%, transparent 68.2%),
+      linear-gradient(135deg, transparent 78%, rgb(245 158 11 / 0.45) 78.2%, transparent 94%),
+      #03060f;
+  }
+  .glass-scene {
+    background: var(--glass-scene);
+  }
+  .glass-nav {
+    --foreground: #ffffff;
+    --muted-foreground: rgb(255 255 255 / 0.68);
+    --border: rgb(255 255 255 / 0.2);
+    --surface-muted: rgb(255 255 255 / 0.1);
+    --gold: #fbbf24;
+    --gold-soft: rgb(251 191 36 / 0.18);
+    color: var(--foreground);
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0.05) 35%, rgb(255 255 255 / 0.03)),
+      rgb(6 12 28 / 0.12);
+    -webkit-backdrop-filter: blur(26px) saturate(150%);
+    backdrop-filter: blur(26px) saturate(150%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.35),
+      0 24px 60px -20px rgb(0 0 0 / 0.7);
+  }
+  /* Bars and sheets float over light page content, so they carry the scene inside the glass. */
+  .glass-bar {
+    background:
+      linear-gradient(180deg, rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.04)),
+      linear-gradient(rgb(3 6 15 / 0.35), rgb(3 6 15 / 0.35)),
+      var(--glass-scene);
+  }
+  .glass-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.8) 50%, transparent);
+    box-shadow: 0 0 8px rgb(255 255 255 / 0.35);
+  }
+  .glass-nav-active {
+    color: #0b1a3d;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgb(252 211 77 / 0.95), rgb(245 158 11 / 0.92) 55%, rgb(217 119 6 / 0.9));
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.5),
+      0 0 0 1px rgb(252 211 77 / 0.4),
+      0 8px 24px -6px rgb(245 158 11 / 0.75);
+  }
+  /* Buttons + accent inside the app panels: blue primary, amber accent. Scoped with :has() so it also
+     reaches sheets/dialogs portalled to <body>, while the marketing site keeps its own palette. */
+  :root:has(.app-aurora) .btn-solid {
+    color: #ffffff;
+    border-radius: 0.625rem;
+    background: linear-gradient(135deg, #3b82f6, #2563eb 50%, #1e40af);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.25),
+      0 8px 20px -10px rgb(37 99 235 / 0.8);
+  }
+  :root:has(.app-aurora) .btn-solid:hover {
+    opacity: 1;
+    filter: brightness(1.1);
+  }
+  :root:has(.app-aurora) .btn-gold {
+    color: #0b1a3d;
+    border-radius: 0.625rem;
+    background: linear-gradient(135deg, #fcd34d, #f59e0b 55%, #d97706);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.45),
+      0 8px 20px -10px rgb(245 158 11 / 0.85);
+  }
+  :root:has(.app-aurora) .btn-outline {
+    color: var(--app-blue-text);
+    border-color: var(--app-blue-text);
+    border-radius: 0.625rem;
+  }
+  :root:has(.app-aurora) .btn-outline:hover {
+    color: #ffffff;
+    border-color: var(--app-blue);
+    background: var(--app-blue);
+  }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass-nav:not(.glass-bar) {
+      background: rgb(8 14 32 / 0.88);
+    }
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .glass-nav:not(.glass-bar) {
+      background: rgb(8 14 32 / 0.92);
+    }
+  }
+}
+
+/* App-panel accent tokens. Unlayered (like :root/.dark above) so they override the base palette. */
+:root:has(.app-aurora) {
+  --gold: #d97706;
+  --gold-soft: rgb(245 158 11 / 0.12);
+  --app-blue: #2563eb;
+  --app-blue-text: #1d4ed8;
+}
+:root.dark:has(.app-aurora) {
+  --gold: #f59e0b;
+  --gold-soft: rgb(245 158 11 / 0.14);
+  --app-blue-text: #93b4fb;
 }
 
 @keyframes kenburns {
