@@ -1,4 +1,4 @@
-/** Brand-wide settings. The phone numbers are still placeholders — replace with Quo's real numbers before launch. */
+/** Brand-wide settings. */
 export const siteConfig = {
   name: "The Citadel",
   legalName: "Quo Engineering & Construction Limited",
@@ -9,8 +9,8 @@ export const siteConfig = {
   developerUrl: "https://www.quoec.com",
   ogImage: "/images/hero/hero-buildings-dusk.jpg",
   contact: {
-    phone: "+234 (0) 201 555 0188",
-    mobile: "+234 (0) 908 555 0144",
+    phone: "+234 (0) 707 254 6307",
+    mobile: "+234 (0) 707 254 6307",
     email: "enquiries@quoec.com",
     address: "15 Mary Slessor Street, Asokoro, Abuja, Nigeria",
     hours: "Mon – Fri, 8:30am – 5:30pm · Sat by appointment",

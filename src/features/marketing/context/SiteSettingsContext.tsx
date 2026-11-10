@@ -14,5 +14,4 @@ export function SiteSettingsProvider({ value, children }: { value: SiteSettings;
 
 export const useSiteSettings = () => useContext(SiteSettingsContext);
 
-/** "+234 (0) 803 …" → "+2340803…" for tel: links. */
-export const telHref = (phone: string) => `tel:${phone.replace(/[^+\d]/g, "")}`;
+

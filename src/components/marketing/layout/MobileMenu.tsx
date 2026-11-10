@@ -7,7 +7,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { buttonVariants } from "@/components/ui/Button";
 import { mainNav } from "@/content/marketing/site";
-import { telHref, useSiteSettings } from "@/features/marketing/context/SiteSettingsContext";
+import { useSiteSettings } from "@/features/marketing/context/SiteSettingsContext";
+import { telHref } from "@/features/website/format";
 import { cn } from "@/lib/utils/cn";
 import { BrandLogo } from "./BrandMark";
 

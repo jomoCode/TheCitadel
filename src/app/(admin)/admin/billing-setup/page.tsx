@@ -33,7 +33,7 @@ function HeadsTab() {
     <div className="space-y-4">
       {canManage && (
         <div className="flex flex-col gap-2 rounded-lg border border-dashed border-border p-4 sm:flex-row">
-          <input aria-label="New charge type name" value={name} onChange={(e) => setName(e.target.value)} placeholder="New charge type, e.g. Gym access" className={inputClass} />
+          <input aria-label="New charge type name" value={name} onChange={(e) => setName(e.target.value)} placeholder="New charge type, e.g. Generator diesel" className={inputClass} />
           <div className="sm:w-48"><MoneyInput aria-label="Usual amount (optional)" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Usual amount" /></div>
           <Button disabled={name.trim().length < 2 || actions.createHead.isPending}
             onClick={() => actions.createHead.mutate({ name: name.trim(), default_amount_kobo: parseNairaToKobo(amount) ?? undefined })}><Plus className="size-4" /> Add</Button>

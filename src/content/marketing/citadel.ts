@@ -14,7 +14,7 @@ export const citadel = {
   intro:
     "On the hilltop of Asokoro — Abuja’s diplomatic enclave, within the security zone of the Presidential Villa — The Citadel is a private collection of just eight three-bedroom residences, each en-suite throughout and each with its own domestic quarters.",
   detail:
-    "Opposite the Embassy of Israel on Mary Slessor Street, The Citadel pairs the capital’s most protected address with the calm of a boutique, residents-only development: a landscaped swimming pool deck, a concierge-served secured lobby, a residents’ gym, and green areas with a children’s playground. Eight residences only — luxury in peace and comfort, by design.",
+    "Opposite the Embassy of Israel on Mary Slessor Street, The Citadel pairs the capital’s most protected address with the calm of a boutique, residents-only development: a landscaped swimming pool deck, a concierge-served secured lobby, and green areas with a children’s playground. Eight residences only — luxury in peace and comfort, by design.",
   residences: [
     {
       label: "Residences",
@@ -38,8 +38,8 @@ export const citadel = {
     },
     {
       label: "Amenities",
-      value: "Pool, Gym & Play Area",
-      note: "Swimming Pool with Landscaped Deck; Indoor Gym; Green area with children’s playground",
+      value: "Pool & Play Area",
+      note: "Swimming Pool with Landscaped Deck; Green area with children’s playground",
     },
     {
       label: "Availability",
@@ -132,7 +132,6 @@ export const citadelListing: Property = {
   ],
   amenities: [
     "Swimming Pool with landscaped deck",
-    "Indoor residents’ gym",
     "Green area with children’s playground",
     "Concierge and secured lobby",
     "Security post",

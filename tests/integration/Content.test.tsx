@@ -59,7 +59,7 @@ describe("Journal editor", () => {
 describe("Site content", () => {
   it("validates and saves contact details", async () => {
     let body: { contact?: Record<string, string> } = {};
-    const contact = { phone: "+234 (0) 201 555 0188", mobile: "+234 (0) 908 555 0144", email: "enquiries@quoec.com", address: "15 Mary Slessor Street, Asokoro", hours: "", mapQuery: "" };
+    const contact = { phone: "+234 (0) 707 254 6307", mobile: "+234 (0) 707 254 6307", email: "enquiries@quoec.com", address: "15 Mary Slessor Street, Asokoro", hours: "", mapQuery: "" };
     server.use(
       http.get(`${API}/admin/site/settings`, () => HttpResponse.json({ contact, socials: [], updated_at: null })),
       http.put(`${API}/admin/site/settings`, async ({ request }) => { body = (await request.json()) as typeof body; return HttpResponse.json({ ...body, updated_at: "2026-11-08T12:00:00Z" }); }),

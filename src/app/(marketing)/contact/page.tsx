@@ -6,6 +6,7 @@ import { loadSiteSettings } from "@/features/marketing/services/ContentSource";
 import { ENQUIRY_TYPES } from "@/features/marketing/schemas/enquiry";
 import type { EnquiryType } from "@/features/marketing/types";
 import { pageMetadata } from "@/features/marketing/services/ContentSource";
+import { telHref } from "@/features/website/format";
 
 export async function generateMetadata(): Promise<Metadata> {
   return pageMetadata("/contact", {
@@ -21,7 +22,7 @@ export default async function ContactPage({ searchParams }: Props) {
   const defaultType = (ENQUIRY_TYPES.some((t) => t.value === type) ? type : "general") as EnquiryType;
   const { contact } = await loadSiteSettings();
   const details = [
-    { icon: Phone, label: "Call", value: `${contact.phone} · ${contact.mobile}`, href: `tel:${contact.phone.replace(/[^+\d]/g, "")}` },
+    { icon: Phone, label: "Call", value: contact.mobile && contact.mobile !== contact.phone ? `${contact.phone} · ${contact.mobile}` : contact.phone, href: telHref(contact.phone) },
     { icon: Mail, label: "Email", value: contact.email, href: `mailto:${contact.email}` },
     { icon: MapPin, label: "Visit", value: contact.address },
     { icon: Clock, label: "Hours", value: contact.hours },

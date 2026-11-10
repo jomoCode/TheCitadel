@@ -21,10 +21,10 @@ export const properties: Property[] = [
     description: [
       "The Ivory Residences rises above the quiet hillside streets of Guzape. Each home is arranged around a deep, sheltered terrace so that the hills and the city skyline become part of everyday life.",
       "Interiors are finished in travertine, warm oak and brushed bronze. Kitchens are fitted with integrated European appliances, and every bedroom has its own en-suite bathroom.",
-      "Residents share a 25-metre rooftop pool, a residents' lounge, a fully equipped gym and 24-hour concierge.",
+      "Residents share a 25-metre rooftop pool, a residents' lounge and 24-hour concierge.",
     ],
     features: ["Floor-to-ceiling glazing", "Private terraces", "En-suite bedrooms", "Smart-home controls", "Dedicated parking"],
-    amenities: ["Rooftop infinity pool", "Gym & spa", "24/7 concierge", "Backup power", "Children's play room", "CCTV & access control"],
+    amenities: ["Rooftop infinity pool", "Spa", "24/7 concierge", "Backup power", "Children's play room", "CCTV & access control"],
     images: [
       { src: "/images/properties/ivory-1.jpg", alt: "Glass tower with deep terraces at sunset" },
       { src: "/images/properties/ivory-2.jpg", alt: "Bright open-plan living room with city views" },
@@ -123,7 +123,7 @@ export const properties: Property[] = [
       "The building includes a lobby café, co-working lounge and a landscaped roof terrace.",
     ],
     features: ["Fully furnished", "Hotel-grade finishes", "Owner booking portal", "City views"],
-    amenities: ["Managed short-let programme", "Lobby café", "Co-working lounge", "Gym", "24/7 reception"],
+    amenities: ["Managed short-let programme", "Lobby café", "Co-working lounge", "24/7 reception"],
     images: [
       { src: "/images/properties/azure-1.jpg", alt: "Modern apartment block" },
       { src: "/images/properties/azure-2.jpg", alt: "Furnished apartment living area" },

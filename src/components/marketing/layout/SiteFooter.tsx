@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { footerNav, siteConfig } from "@/content/marketing/site";
 import { loadSiteSettings } from "@/features/marketing/services/ContentSource";
+import { telHref } from "@/features/website/format";
 import { BrandMark } from "./BrandMark";
 import { NewsletterForm } from "./NewsletterForm";
 
@@ -33,7 +34,7 @@ export async function SiteFooter() {
           <address className="space-y-1 text-sm not-italic text-[#d9cfc2]">
             <p>{contact.address}</p>
             <p>
-              <a href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`} className="hover:text-white">{contact.phone}</a>
+              <a href={telHref(contact.phone)} className="hover:text-white">{contact.phone}</a>
             </p>
             <p>
               <a href={`mailto:${contact.email}`} className="hover:text-white">{contact.email}</a>
