@@ -111,8 +111,8 @@
   }
 
   /* ── App panels (admin / resident / security) only — not the marketing site ──
-     Glassmorphism: a dark "scene" of blue and amber light beams sits behind the nav,
-     and the nav itself is near-clear frosted glass with a bright rim and glowing dividers.
+     Glassmorphism: the nav is single-colour translucent navy frosted glass (backdrop blur)
+     with a soft light rim and glowing dividers.
      Tokens are re-scoped inside .glass-nav so existing text/border/hover utilities just work. */
   .app-aurora {
     background-color: var(--background);
@@ -147,18 +147,6 @@
       display: none;
     }
   }
-  .glass-scene,
-  .glass-bar {
-    --glass-scene:
-      linear-gradient(135deg, rgb(56 189 248 / 0.95) 0%, rgb(37 99 235 / 0.9) 20%, transparent 20.2%),
-      linear-gradient(135deg, transparent 27%, rgb(251 191 36 / 0.9) 27.2%, rgb(180 83 9 / 0.5) 41%, transparent 41.2%),
-      linear-gradient(135deg, transparent 50%, rgb(37 99 235 / 0.9) 50.2%, rgb(30 27 140 / 0.65) 68%, transparent 68.2%),
-      linear-gradient(135deg, transparent 78%, rgb(245 158 11 / 0.45) 78.2%, transparent 94%),
-      #03060f;
-  }
-  .glass-scene {
-    background: var(--glass-scene);
-  }
   .glass-nav {
     --foreground: #ffffff;
     --muted-foreground: rgb(255 255 255 / 0.68);
@@ -167,20 +155,81 @@
     --gold: #fbbf24;
     --gold-soft: rgb(251 191 36 / 0.18);
     color: var(--foreground);
-    background: linear-gradient(180deg, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0.05) 35%, rgb(255 255 255 / 0.03)),
-      rgb(6 12 28 / 0.12);
-    -webkit-backdrop-filter: blur(26px) saturate(150%);
-    backdrop-filter: blur(26px) saturate(150%);
-    box-shadow:
-      inset 0 1px 0 rgb(255 255 255 / 0.35),
-      0 24px 60px -20px rgb(0 0 0 / 0.7);
-  }
-  /* Bars and sheets float over light page content, so they carry the scene inside the glass. */
-  .glass-bar {
+    /* Single-colour frosted navy glass: translucent tint + light sheen + blur of whatever sits behind it. */
     background:
-      linear-gradient(180deg, rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.04)),
-      linear-gradient(rgb(3 6 15 / 0.35), rgb(3 6 15 / 0.35)),
-      var(--glass-scene);
+      linear-gradient(160deg, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0.05) 38%, rgb(255 255 255 / 0.02)),
+      rgb(11 26 61 / 0.66);
+    -webkit-backdrop-filter: blur(28px) saturate(170%);
+    backdrop-filter: blur(28px) saturate(170%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.3),
+      inset -1px 0 0 rgb(255 255 255 / 0.14),
+      inset 0 0 0 1px rgb(255 255 255 / 0.06),
+      0 24px 60px -20px rgb(0 0 0 / 0.55);
+  }
+  /* Desktop sidebar sits on this single-hue (blue only) glow layer so the frosted glass has depth to blur. */
+  .glass-scene {
+    background:
+      radial-gradient(18rem 18rem at 15% 12%, rgb(59 130 246 / 0.55), transparent 70%),
+      radial-gradient(20rem 22rem at 95% 55%, rgb(37 99 235 / 0.4), transparent 70%),
+      radial-gradient(18rem 18rem at 5% 95%, rgb(30 64 175 / 0.55), transparent 70%),
+      #0a1532;
+  }
+  /* Mobile/top/bottom bars and the menu sheet float over light page content, which washes a thin
+     tint out to grey — so they carry the same blue glows inside the glass, over a denser navy. */
+  .glass-nav.glass-bar {
+    background:
+      linear-gradient(160deg, rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.04) 40%, rgb(255 255 255 / 0.02)),
+      radial-gradient(60% 140% at 10% 0%, rgb(59 130 246 / 0.45), transparent 70%),
+      radial-gradient(55% 140% at 95% 100%, rgb(37 99 235 / 0.35), transparent 70%),
+      rgb(10 21 50 / 0.86);
+  }
+  .glass-nav.glass-sidebar {
+    background:
+      linear-gradient(160deg, rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.04) 38%, rgb(255 255 255 / 0.02)),
+      rgb(11 26 61 / 0.35);
+  }
+
+  /* Scrollbars in the app panels: slim rounded blue thumb; white-on-glass inside the nav. */
+  :root:has(.app-aurora) {
+    --sb-thumb: rgb(37 99 235 / 0.45);
+    --sb-thumb-hover: rgb(37 99 235 / 0.75);
+  }
+  :root.dark:has(.app-aurora) {
+    --sb-thumb: rgb(147 180 251 / 0.35);
+    --sb-thumb-hover: rgb(147 180 251 / 0.6);
+  }
+  .glass-nav {
+    --sb-thumb: rgb(255 255 255 / 0.22);
+    --sb-thumb-hover: rgb(255 255 255 / 0.42);
+  }
+  :root:has(.app-aurora) ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  :root:has(.app-aurora) ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  :root:has(.app-aurora) ::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb);
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+  }
+  :root:has(.app-aurora) ::-webkit-scrollbar-thumb:hover {
+    background: var(--sb-thumb-hover);
+    background-clip: padding-box;
+  }
+  :root:has(.app-aurora) ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  /* Firefox (no ::-webkit-scrollbar support). */
+  @supports not selector(::-webkit-scrollbar) {
+    :root:has(.app-aurora),
+    :root:has(.app-aurora) * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--sb-thumb) transparent;
+    }
   }
   .glass-divider {
     height: 1px;
@@ -267,13 +316,13 @@
     }
   }
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    .glass-nav:not(.glass-bar) {
-      background: rgb(8 14 32 / 0.88);
+    .glass-nav {
+      background: rgb(11 26 61 / 0.94);
     }
   }
   @media (prefers-reduced-transparency: reduce) {
-    .glass-nav:not(.glass-bar) {
-      background: rgb(8 14 32 / 0.92);
+    .glass-nav {
+      background: rgb(11 26 61 / 0.96);
     }
   }
 }
