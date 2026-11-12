@@ -62,11 +62,11 @@ export const footerNav = {
   ],
 } as const;
 
-/** Key figures for The Citadel (from the client's brochure copy). */
+/** Key figures for The Citadel (from the client's updated profile). */
 export const keyFigures = [
   { value: "8", label: "Residences only" },
   { value: "3", label: "Bedrooms, en-suite" },
-  { value: "≈217 m²", label: "Premium residences" },
+  { value: "204–217 m²", label: "Per residence" },
   { value: "2", label: "Parking bays each" },
 ] as const;
 

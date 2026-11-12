@@ -64,7 +64,7 @@ export async function CitadelLocation() {
         <div className="rounded-brand border border-gold/40 bg-surface p-8">
           <p className="text-eyebrow text-gold">Register your interest</p>
           <p className="mt-3 font-display text-2xl">
-            A limited release of Premium residences is now offered for sale.
+            {citadel.availability}
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link
