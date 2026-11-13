@@ -5,7 +5,7 @@ import { InfoTip } from "@/components/ui/InfoTip";
 import type { TooltipKey } from "@/lib/tooltips/registry";
 
 const ACTIONS: { title: string; body: string; href: string; icon: typeof Home; tip?: TooltipKey }[] = [
-  { title: "Own a Citadel residence", body: "A limited release of Premium residences is offered for sale.", href: "/guides/how-to-buy", icon: Home },
+  { title: "Own a Citadel residence", body: "Only eight residences will be built — Premium and Deluxe.", href: "/guides/how-to-buy", icon: Home },
   { title: "Sell or develop your land", body: "Get a transparent offer or a joint-development proposal.", href: "/guides/sell-your-land", icon: LandPlot, tip: "marketing.landowner" },
   { title: "Earn as you refer", body: "Introduce a buyer and earn 1% of the sale value.", href: "/referral", icon: Handshake, tip: "marketing.referral" },
 ];

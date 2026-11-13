@@ -2,7 +2,9 @@ import { BedDouble, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { StatusBadge } from "@/components/marketing/primitives/StatusBadge";
+import { BrochureDownload } from "@/components/marketing/properties/BrochureDownload";
 import { InfoTip } from "@/components/ui/InfoTip";
+import { isCitadelProperty } from "@/content/marketing/citadel";
 import type { Property } from "@/features/marketing/types";
 import { cn } from "@/lib/utils/cn";
 import { formatBedrooms, priceLabel } from "@/lib/utils/format";
@@ -44,6 +46,9 @@ export function PropertyCard({ property, className, priority = false }: Property
           {property.priceFrom > 0 && <InfoTip tip="marketing.priceFrom" label="About this price" />}
         </span>
       </div>
+      {isCitadelProperty(property) && (
+        <BrochureDownload propertySlug={property.slug} size="sm" className="mt-4 w-full" />
+      )}
     </article>
   );
 }

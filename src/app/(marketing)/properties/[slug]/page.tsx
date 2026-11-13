@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { BrochureDownload } from "@/components/marketing/properties/BrochureDownload";
 import { PropertyCard } from "@/components/marketing/properties/PropertyCard";
 import { PropertyEnquiry } from "@/components/marketing/properties/PropertyEnquiry";
 import { PropertyFacts } from "@/components/marketing/properties/PropertyFacts";
@@ -9,6 +10,7 @@ import { PropertyViewTracker } from "@/components/marketing/properties/PropertyV
 import { PhotoHero } from "@/components/marketing/primitives/PhotoHero";
 import { StatusBadge } from "@/components/marketing/primitives/StatusBadge";
 import { PropertyJsonLd } from "@/components/marketing/seo/JsonLd";
+import { citadel, isCitadelProperty } from "@/content/marketing/citadel";
 import { loadCatalog } from "@/features/marketing/services/PropertySource";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -48,6 +50,7 @@ export default async function PropertyPage({ params }: Params) {
   const property = catalog.bySlug((await params).slug);
   if (!property) notFound();
   const related = catalog.related(property);
+  const hasBrochure = isCitadelProperty(property);
 
   return (
     <>
@@ -56,6 +59,7 @@ export default async function PropertyPage({ params }: Params) {
       <PhotoHero image={property.images[0]} eyebrow={`${property.neighbourhood}, ${property.city}`} title={property.name}>
         <p className="mt-4 max-w-xl text-sm text-white/85 md:text-base">{property.summary}</p>
         <StatusBadge status={property.status} className="mt-6 [&_button]:text-white/80" />
+        {hasBrochure && <BrochureDownload propertySlug={property.slug} variant="ghostLight" className="mt-6" />}
       </PhotoHero>
 
       <div className="container-lux py-12 pb-32 md:py-20 lg:pb-24">
@@ -68,6 +72,16 @@ export default async function PropertyPage({ params }: Params) {
                 {property.description.map((paragraph) => <p key={paragraph.slice(0, 24)}>{paragraph}</p>)}
               </div>
             </section>
+            {hasBrochure && (
+              <section className="flex flex-col gap-4 rounded-brand border border-gold/40 bg-surface p-6 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-eyebrow text-gold">The brochure</p>
+                  <p className="mt-2 font-display text-xl">Floor layouts, residences, prices and location</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{citadel.brochure.meta}</p>
+                </div>
+                <BrochureDownload propertySlug={property.slug} variant="gold" className="shrink-0" />
+              </section>
+            )}
             <PropertyGallery images={property.images} />
             {property.features.length > 0 && <CheckList title="Features" items={property.features} />}
             {property.amenities.length > 0 && <CheckList title="Amenities" items={property.amenities} />}

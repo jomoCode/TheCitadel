@@ -1,7 +1,7 @@
 import type { Property } from "@/features/marketing/types";
 
 /**
- * The Citadel, Asokoro — the development the website sells. Copy supplied by the client (Quo Engineering & Construction).
+ * The Citadel, Asokoro — the development the website sells. Copy from the client's updated profile (Quo Engineering & Construction, Nov 2026).
  * Single source for the home page, the listing, the about page and the backend seed. Images are placeholders for now.
  */
 export const CITADEL_SLUG = "the-citadel-asokoro";
@@ -12,55 +12,65 @@ export const citadel = {
   place: "Asokoro • Abuja",
   status: "Now selling",
   intro:
-    "On the hilltop of Asokoro — Abuja’s diplomatic enclave, within the security zone of the Presidential Villa — The Citadel is a private collection of just eight three-bedroom residences, each en-suite throughout and each with its own domestic quarters.",
+    "Nestled in the hills of Asokoro, on the prestigious Mary Slessor Street, The Citadel brings together luxury, comfort, security and prominence for the discerning buyer. It comprises just eight three-bedroom residences, each offering over 200 square metres of refined living space, with all bedrooms en-suite and a domestic quarters — a rare combination of generous space and true privacy.",
   detail:
-    "Opposite the Embassy of Israel on Mary Slessor Street, The Citadel pairs the capital’s most protected address with the calm of a boutique, residents-only development: a landscaped swimming pool deck, a concierge-served secured lobby, and green areas with a children’s playground. Eight residences only — luxury in peace and comfort, by design.",
+    "A dedicated lift serves the residences, making movement effortless. Comfort is heightened by a large swimming pool, a fully equipped gym, and an expansive green recreational area overlooking the hills of Asokoro. The development is secured by a perimeter wall, round-the-clock professional security personnel and CCTV surveillance.",
   residences: [
     {
       label: "Residences",
       value: "Eight Three-Bedroom apartments",
-      note: "En-suite throughout, each with domestic quarters (boys’ quarters)",
+      note: "All bedrooms en-suite, each residence with its own domestic quarters",
     },
     {
       label: "Premium residences",
       value: "≈ 217 m²",
-      note: "Approximately 217 square metres",
+      note: "Three bedrooms, all en-suite, with domestic quarters",
     },
     {
-      label: "Parking",
+      label: "Deluxe residences",
+      value: "≈ 204 m²",
+      note: "Three bedrooms, all en-suite, with domestic quarters",
+    },
+    {
+      label: "Parking & access",
       value: "Two Bays",
-      note: "Two dedicated bays for each residence",
-    },
-    {
-      label: "Access",
-      value: "Lift to all Floors",
-      note: "Concierge, secured lobby and security post",
+      note: "Two covered, secured bays per residence; dedicated lift to all floors",
     },
     {
       label: "Amenities",
-      value: "Pool & Play Area",
-      note: "Swimming Pool with Landscaped Deck; Green area with children’s playground",
+      value: "Pool & Green Area",
+      note: "Swimming pool with landscaped deck, gym, green recreational area and children’s playground",
     },
     {
-      label: "Availability",
-      value: "Limited Release",
-      note: "A limited release of Premium residences is offered for sale",
+      label: "Security",
+      value: "Round the Clock",
+      note: "Perimeter wall, manned security post, concierge-served secured lobby and CCTV surveillance",
     },
   ],
   address: "15 Mary Slessor Street, Asokoro, Abuja",
   location:
-    "15 Mary Slessor Street, Asokoro — opposite the Embassy of Israel and close to the High Commission of Malaysia, in the same diplomatic and security zone as the Presidential Villa. Permanent checkpoints and patrols make Asokoro widely regarded as Abuja’s safest address, and scarce land under strict development control keeps quality new residences rare.",
+    "15 Mary Slessor Street, Asokoro — close to the High Commission of Malaysia, in the same diplomatic and security zone as the Presidential Villa. Mary Slessor Street is home to several diplomatic missions and is widely regarded as one of the most secure streets in Abuja; permanent checkpoints and patrols make Asokoro the capital’s safest address, and scarce land under strict development control keeps quality new residences rare.",
   distances: [
-    { place: "Embassy of Israel", time: "Opposite" },
     { place: "Maitama", time: "8–12 minutes" },
-    { place: "Wuse 2 Dining and Retail", time: "10–15 minutes" },
     { place: "Central Business District", time: "10–18 minutes" },
+    { place: "Wuse 2 Dining and Retail", time: "10–15 minutes" },
+    { place: "NISA / Cedarcrest Hospitals", time: "10–15 minutes" },
     { place: "Transcorp Hilton", time: "About 15 minutes" },
+    { place: "International Schools (AISA, Whiteplains)", time: "15–20 minutes" },
     { place: "Nnamdi Azikiwe International Airport", time: "30–45 minutes" },
   ],
   developer:
-    "The Citadel is developed by Quo Engineering & Construction Limited, a luxury brand promoted by the principals of Houses for Africa Nigeria Limited and Mobus Property Nigeria Limited — the team behind River Park Estate in Abuja and award-winning luxury developments in Accra.",
+    "The Citadel is developed by Quo Engineering & Construction Limited, a luxury brand promoted by the principals of Houses for Africa Nigeria Limited and Mobus Property Nigeria Limited — the teams behind River Park Estate, one of Abuja’s largest residential developments, and award-recognised homes across Accra including The Monarch Residences, Phoenix Villas, Richfield Lifestyle Estate, Capella Place, Knight Court and Park Apartments, and Capital Place, Accra’s first office park.",
   developerName: "Quo Engineering & Construction Limited",
+  /** Release and pricing line, from the updated profile (Nov 2026). */
+  availability: "Only eight residences will be built — Premium and Deluxe, prices on application.",
+  /** The client's profile brochure, served from /public. Offered for download wherever The Citadel is listed. */
+  brochure: {
+    href: "/downloads/the-citadel-brochure.pdf",
+    fileName: "The-Citadel-Asokoro-Brochure.pdf",
+    label: "Download the brochure",
+    meta: "PDF · 7.2 MB",
+  },
   promise: "Quality assured!",
   /** Architectural renders. [0] is the home hero, [1] the home showcase; the full set is the offline listing gallery. */
   images: [
@@ -109,14 +119,14 @@ export const citadelListing: Property = {
   address: citadel.address,
   priceFrom: 0,
   status: "selling",
-  units: "Eight three-bedroom residences, en-suite throughout",
+  units: "Eight three-bedroom residences — Premium (≈217 m²) and Deluxe (≈204 m²)",
   bedroomsMin: 3,
   bedroomsMax: 3,
   completion: "",
   paymentPlan: false,
   featured: true,
   summary:
-    "A private collection of just eight three-bedroom residences on the hilltop of Asokoro, Abuja’s diplomatic enclave.",
+    "Just eight three-bedroom residences of over 200 m², all en-suite, on Mary Slessor Street in the hills of Asokoro — Abuja’s diplomatic enclave.",
   description: [
     citadel.intro,
     citadel.detail,
@@ -124,22 +134,34 @@ export const citadelListing: Property = {
     citadel.developer,
   ],
   features: [
-    "Three bedrooms, en-suite throughout",
-    "Domestic quarters (boys’ quarters) with every residence",
+    "Three bedrooms, all en-suite",
+    "Domestic quarters with every residence",
     "Premium residences of approximately 217 m²",
-    "Two dedicated parking bays per residence",
-    "Lift serving all floors",
+    "Deluxe residences of approximately 204 m²",
+    "Two covered, secured parking bays per residence",
+    "Dedicated lift serving all floors",
+    "Private balconies",
   ],
   amenities: [
-    "Swimming Pool with landscaped deck",
-    "Green area with children’s playground",
-    "Concierge and secured lobby",
-    "Security post",
+    "Swimming pool with landscaped deck",
+    "Fully equipped gym",
+    "Green recreational area",
+    "Children’s playground",
+    "Concierge service",
+    "Secured lobby & security post",
+    "24-hour security",
+    "Perimeter wall",
+    "CCTV surveillance",
   ],
   images: citadel.images.map((i) => ({ ...i })),
   seo: {
     title: "The Citadel, Asokoro — Luxury Three-Bedroom Residences in Abuja",
     description:
-      "Eight en-suite three-bedroom residences with domestic quarters on Mary Slessor Street, Asokoro — Abuja’s diplomatic enclave. Now selling.",
+      "Eight en-suite three-bedroom residences (≈204–217 m²) with domestic quarters on Mary Slessor Street, Asokoro — Abuja’s diplomatic enclave. Now selling.",
   },
 };
+
+/** True for any listing that is The Citadel ("Citadel", "The Citadel", "The Citadel, Asokoro"…) — these carry the brochure download. */
+export function isCitadelProperty(property: Pick<Property, "name" | "slug">): boolean {
+  return property.slug === CITADEL_SLUG || /\bcitadel\b/i.test(property.name);
+}
