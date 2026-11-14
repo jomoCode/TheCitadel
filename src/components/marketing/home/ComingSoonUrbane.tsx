@@ -65,10 +65,12 @@ export function ComingSoonUrbane() {
           className="absolute inset-x-0 bottom-0 hidden px-14 pb-14 md:block"
         >
           <div className="flex items-center gap-3">
-            <span className="h-px w-12 bg-[#d4af5a]" aria-hidden />
-            <p className="text-eyebrow text-[#d4af5a]">Coming soon</p>
+            <span className="h-px w-16 bg-[#d4af5a]" aria-hidden />
+            <p className="font-[family-name:var(--font-montserrat)] text-lg uppercase tracking-[0.22em] text-[#d4af5a]">
+              Coming soon
+            </p>
           </div>
-          <h2 className="mt-4 font-display text-6xl uppercase leading-tight tracking-wide drop-shadow-lg">
+          <h2 className="mt-4 font-display text-5xl uppercase leading-tight tracking-wide drop-shadow-lg">
             The Urbane <span className="text-[#d4af5a]">in Wuye, Abuja</span>
           </h2>
         </motion.div>
