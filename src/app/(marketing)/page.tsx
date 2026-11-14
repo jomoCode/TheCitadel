@@ -1,5 +1,6 @@
 import { CitadelLocation } from "@/components/marketing/home/CitadelLocation";
 import { CitadelShowcase } from "@/components/marketing/home/CitadelShowcase";
+import { ComingSoonUrbane } from "@/components/marketing/home/ComingSoonUrbane";
 import { ContactCta } from "@/components/marketing/home/ContactCta";
 import { HeroSection } from "@/components/marketing/home/HeroSection";
 import { LatestJournal } from "@/components/marketing/home/LatestJournal";
@@ -28,6 +29,7 @@ export default async function HomePage() {
       <CitadelShowcase />
       <CitadelLocation />
       <WhyCitadel />
+      <ComingSoonUrbane />
       <QuickActions />
       {testimonials.length > 0 && <TestimonialCards testimonials={testimonials} />}
       <LatestJournal />
