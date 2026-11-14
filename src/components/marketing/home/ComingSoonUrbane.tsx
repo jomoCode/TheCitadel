@@ -3,28 +3,17 @@ import { Reveal } from "@/components/marketing/primitives/Reveal";
 /** Path of the teaser video, served from /public. */
 export const URBANE_VIDEO_SRC = "/videos/the-urbane-wuye.mp4";
 
-/** Full-bleed teaser for the next development: The Urbane in Wuye (coming soon). */
+/**
+ * Teaser for the next development: The Urbane in Wuye (coming soon).
+ * The video keeps its natural aspect ratio so no part of the frame is cropped.
+ */
 export function ComingSoonUrbane() {
   return (
     <section
       aria-labelledby="coming-soon-urbane"
-      className="relative isolate overflow-hidden bg-[#140e0c] text-[#f4ede3]"
+      className="bg-[#140e0c] py-20 text-[#f4ede3] md:py-28"
     >
-      <video
-        className="absolute inset-0 -z-10 size-full object-cover"
-        src={URBANE_VIDEO_SRC}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 -z-10 bg-gradient-to-t from-[#140e0c]/90 via-[#140e0c]/40 to-[#140e0c]/20"
-        aria-hidden
-      />
-      <div className="container-lux flex min-h-[70vh] items-end py-20 md:min-h-[80vh] md:py-28">
+      <div className="container-lux">
         <Reveal>
           <p className="text-eyebrow text-[#d4af5a]">Coming soon</p>
           <h2
@@ -34,6 +23,16 @@ export function ComingSoonUrbane() {
             Coming soon — The Urbane in Wuye
           </h2>
         </Reveal>
+        <video
+          className="mx-auto mt-10 block h-auto max-h-[85vh] w-auto max-w-full rounded-brand md:mt-14"
+          src={URBANE_VIDEO_SRC}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Teaser video for The Urbane in Wuye"
+        />
       </div>
     </section>
   );
