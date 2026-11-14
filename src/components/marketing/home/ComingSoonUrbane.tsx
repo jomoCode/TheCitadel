@@ -26,12 +26,24 @@ export function ComingSoonUrbane() {
   return (
     <section
       ref={ref}
-      aria-labelledby="coming-soon-urbane"
+      aria-label="Coming soon: The Urbane in Wuye, Abuja"
       className="overflow-hidden bg-[#140e0c] text-[#f4ede3]"
     >
+      {/* Mobile: bold heading above the video. */}
+      <div className="px-4 pb-8 pt-16 sm:px-8 md:hidden">
+        <div className="flex items-center gap-3">
+          <span className="h-px w-10 bg-[#d4af5a]" aria-hidden />
+          <p className="text-eyebrow text-[#d4af5a]">Coming soon</p>
+        </div>
+        <h2 className="mt-4 font-display text-4xl font-semibold uppercase leading-[1.05] tracking-wide sm:text-5xl">
+          The Urbane
+          <span className="block text-[#d4af5a]">in Wuye, Abuja</span>
+        </h2>
+      </div>
+
       <motion.div
         style={{ scale, borderRadius: radius }}
-        className="relative aspect-[944/528] w-full origin-center overflow-hidden will-change-transform"
+        className="relative aspect-944/528 w-full origin-center overflow-hidden will-change-transform"
       >
         <video
           className="absolute inset-0 size-full object-contain"
@@ -44,22 +56,20 @@ export function ComingSoonUrbane() {
           aria-label="Teaser video for The Urbane in Wuye"
         />
         <div
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"
+          className="pointer-events-none absolute inset-0 hidden bg-linear-to-t from-black/75 via-black/10 to-transparent md:block"
           aria-hidden
         />
+        {/* Desktop: heading overlaid on the video. */}
         <motion.div
           style={{ y: textY, opacity: textOpacity }}
-          className="absolute inset-x-0 bottom-0 px-4 pb-6 sm:px-8 md:px-14 md:pb-14"
+          className="absolute inset-x-0 bottom-0 hidden px-14 pb-14 md:block"
         >
           <div className="flex items-center gap-3">
-            <span className="h-px w-8 bg-[#d4af5a] md:w-12" aria-hidden />
+            <span className="h-px w-12 bg-[#d4af5a]" aria-hidden />
             <p className="text-eyebrow text-[#d4af5a]">Coming soon</p>
           </div>
-          <h2
-            id="coming-soon-urbane"
-            className="mt-3 font-display text-2xl uppercase leading-tight tracking-wide drop-shadow-lg sm:text-4xl md:mt-4 md:text-6xl"
-          >
-            The Urbane <span className="text-[#d4af5a]">in Wuye</span>
+          <h2 className="mt-4 font-display text-6xl uppercase leading-tight tracking-wide drop-shadow-lg">
+            The Urbane <span className="text-[#d4af5a]">in Wuye, Abuja</span>
           </h2>
         </motion.div>
       </motion.div>
