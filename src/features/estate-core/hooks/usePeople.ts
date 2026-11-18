@@ -61,7 +61,7 @@ export function useStaff(params: PageQuery) {
 export function useCreateStaff(onDone?: () => void) {
   return useMutationWithToast({
     mutationFn: (body: StaffInput) => peopleApi.createStaff(body),
-    success: (a) => `${a.full_name} added`,
+    success: (a, vars) => (vars.temporary_password ? `${a.full_name} added` : `${a.full_name} added — invitation email sent`),
     invalidate: [["staff"], ["roles"]],
     onSuccess: onDone,
   });

@@ -39,6 +39,8 @@ export const adminTips = {
   "admin.roles": "A role is a named set of permissions, like 'Accountant'. Change a role once and everyone with that role is updated.",
   "admin.role.system": "Built-in role. It can't be deleted, and the Administrator role always keeps full access.",
   "admin.staff": "People who work for the company: administrators, security officers and anyone with a custom role.",
+  "admin.staff.tempPassword":
+    "Use this when the team member can't receive email yet. Share it with them privately and ask them to change it after first login.",
   "admin.permissionsApply": "Changes apply the next time each person's session refreshes — usually within a minute.",
   // Resident portal
   "resident.primary": "You are the main contact for this home. Bills and important notices are addressed to you.",
