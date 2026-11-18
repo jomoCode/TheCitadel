@@ -1,12 +1,11 @@
-import { citadel } from "./citadel";
-
 /** About page. Facts come only from the client's brochure copy; mission and values are placeholders for the client to confirm. */
 export const aboutContent = {
   heroImage: { src: "/images/hero/hero-buildings-dusk.jpg", alt: "Contemporary residences lit at dusk (illustrative image)" },
   story: [
-    citadel.developer,
+    "The Citadel is developed by Quo Engineering & Construction Limited, the team behind River Park Estate, one of Abuja’s largest residential developments, and award-recognised homes across Accra including The Monarch Residences, Phoenix Villas, Richfield Lifestyle Estate, Capella Place, Knight Court and Park Apartments, and Capital Place, Accra’s first office park.",
     "With The Citadel, the team brings that experience to Asokoro: a boutique, residents-only development of eight residences on Mary Slessor Street, in Abuja’s diplomatic and security zone.",
     "Every detail — from en-suite bedrooms and domestic quarters to a concierge-served secured lobby — is designed for one idea: luxury in peace and comfort.",
+    "The Citadel is Developed by Quo Engineering & Construction Limited, a Luxury Brand with extensive Real Estate experience, The Citadel introduces a boutique, Residents-only collection of Eight Homes to Mary Slessor Street in Asokoro—Abuja’s Premier Diplomatic and Security Zone. From en-suite Bedrooms and Private Domestic Quarters to a concierge-served secured lobby, every detail is crafted around a single vision: Luxury defined by peace and comfort.",
   ],
   mission: "To create a small number of exceptional residences, built to last and cared for with the attention their owners deserve.",
   vision: "Homes where privacy, security and calm are part of the design — not an afterthought.",
