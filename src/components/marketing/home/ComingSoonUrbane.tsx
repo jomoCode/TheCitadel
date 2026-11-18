@@ -45,7 +45,7 @@ export function ComingSoonUrbane() {
         className="absolute inset-0 -z-10 bg-linear-to-r from-[#140e0c]/65 via-[#140e0c]/25 to-[#140e0c]/40"
         aria-hidden
       />
-      <div className="container-lux grid items-center gap-10 lg:grid-cols-[5fr_7fr] lg:gap-16">
+      <div className="container-lux grid items-center gap-10 lg:max-w-384 lg:grid-cols-[1fr_2fr] lg:gap-12">
         <motion.div style={{ x: textX, opacity: textOpacity }}>
           <div className="flex items-center gap-3 lg:gap-4">
             <span className="h-px w-10 bg-[#d4af5a] lg:w-16" aria-hidden />
