@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "*.supabase.co" },
     ],
   },
+  // The properties listing now lives on the developer's site.
+  async redirects() {
+    return [{ source: "/properties", destination: "https://quoec.com/", permanent: false }];
+  },
   turbopack: {
     rules: {
       "*.css": {

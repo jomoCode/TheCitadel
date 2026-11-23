@@ -15,7 +15,7 @@ export async function FeaturedProperties() {
     <section className="bg-surface-muted py-20 md:py-28">
       <div className="container-lux flex items-end justify-between gap-6">
         <SectionHeading eyebrow="Featured developments" title="Homes for every chapter" intro="From lagoon-view apartments to detached family homes — each one designed, built and managed by Citadel." />
-        <Link href="/properties" className="text-nav hidden shrink-0 border-b border-gold pb-1 hover:text-gold md:inline-block">
+        <Link href="https://quoec.com/" className="text-nav hidden shrink-0 border-b border-gold pb-1 hover:text-gold md:inline-block">
           View all
         </Link>
       </div>
@@ -29,7 +29,7 @@ export async function FeaturedProperties() {
       </ul>
 
       <div className="container-lux mt-8 md:hidden">
-        <Link href="/properties" className="text-nav border-b border-gold pb-1">View all properties</Link>
+        <Link href="https://quoec.com/" className="text-nav border-b border-gold pb-1">View all properties</Link>
       </div>
     </section>
   );

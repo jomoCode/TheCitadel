@@ -8,7 +8,7 @@ import { loadProperties } from "@/features/marketing/services/PropertySource";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [properties, blog] = await Promise.all([loadProperties(), loadBlog()]);
   const base = siteConfig.url;
-  const staticPaths = ["", "/properties", "/about", "/contact", "/blog", "/faq", "/referral"];
+  const staticPaths = ["", "/about", "/contact", "/blog", "/faq", "/referral"];
   return [
     ...staticPaths.map((path) => ({ url: `${base}${path}`, changeFrequency: "weekly" as const, priority: path === "" ? 1 : 0.7 })),
     ...guides.map((g) => ({ url: `${base}/guides/${g.slug}`, changeFrequency: "monthly" as const, priority: 0.6 })),

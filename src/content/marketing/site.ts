@@ -25,7 +25,7 @@ export const siteConfig = {
 } as const;
 
 export const mainNav = [
-  { label: "Properties", href: "/properties" },
+  { label: "Properties", href: "https://quoec.com/" },
   {
     label: "Buy · Rent · Sell",
     href: "/guides/how-to-buy",
@@ -42,7 +42,7 @@ export const mainNav = [
 
 export const footerNav = {
   explore: [
-    { label: "Properties", href: "/properties" },
+    { label: "Properties", href: "https://quoec.com/" },
     { label: "About us", href: "/about" },
     { label: "Journal", href: "/blog" },
     { label: "FAQs", href: "/faq" },
