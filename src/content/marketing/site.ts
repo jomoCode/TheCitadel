@@ -53,7 +53,6 @@ export const footerNav = {
     { label: "How to rent", href: "/guides/how-to-rent" },
     { label: "Sell your land", href: "/guides/sell-your-land" },
     { label: "Referral programme", href: "/referral" },
-    { label: "Resident login", href: "/login" },
   ],
   legal: [
     { label: "Privacy policy", href: "/legal/privacy" },

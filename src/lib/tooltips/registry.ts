@@ -1,10 +1,4 @@
-import { adminTips } from "./admin";
-import { billingTips } from "./billing";
-import { contentTips } from "./content";
 import { marketingTips } from "./marketing";
-import { supportTips } from "./support";
-import { visitorTips } from "./visitors";
-import { websiteTips } from "./website";
 
 /**
  * Every tooltip in the app lives in a per-domain dictionary and is merged here.
@@ -12,12 +6,6 @@ import { websiteTips } from "./website";
  */
 const registry = {
   ...marketingTips,
-  ...adminTips,
-  ...billingTips,
-  ...supportTips,
-  ...visitorTips,
-  ...websiteTips,
-  ...contentTips,
 } as const;
 
 export type TooltipKey = keyof typeof registry;
