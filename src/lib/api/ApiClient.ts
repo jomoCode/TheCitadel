@@ -1,4 +1,5 @@
 import { apiBaseUrl } from "@/lib/config/apiBaseUrl";
+import { websiteHeaders } from "@/lib/config/websiteId";
 
 /** Error carrying the backend's code, friendly message and debug location (e.g. "bills.py/create_bill():42"). */
 export class ApiError extends Error {
@@ -62,7 +63,7 @@ export class ApiClient {
     const token = this.tokenProvider();
     let response: Response;
     try {
-      response = await fetch(`${this.baseUrl}${path}`, { method: "POST", body: form, headers: token ? { Authorization: `Bearer ${token}` } : {} });
+      response = await fetch(`${this.baseUrl}${path}`, { method: "POST", body: form, headers: { ...websiteHeaders(), ...(token ? { Authorization: `Bearer ${token}` } : {}) } });
     } catch {
       throw new ApiError("We couldn't reach the server. Check your connection and try again.", 0, "network_error");
     }
@@ -77,7 +78,7 @@ export class ApiClient {
   /** Authenticated file download (e.g. CSV exports): fetches with the bearer token, then saves via a temporary link. */
   async download(path: string, query: Query | undefined, filename: string): Promise<void> {
     const token = this.tokenProvider();
-    const response = await fetch(`${this.baseUrl}${withQuery(path, query)}`, { headers: token ? { Authorization: `Bearer ${token}` } : {} });
+    const response = await fetch(`${this.baseUrl}${withQuery(path, query)}`, { headers: { ...websiteHeaders(), ...(token ? { Authorization: `Bearer ${token}` } : {}) } });
     if (!response.ok) {
       const payload = await response.json().catch(() => null);
       throw new ApiError(payload?.error?.message ?? `Download failed (${response.status})`, response.status, payload?.error?.code);
@@ -99,6 +100,7 @@ export class ApiClient {
         signal: options.signal,
         headers: {
           "Content-Type": "application/json",
+          ...websiteHeaders(),
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
           ...options.headers,
         },

@@ -18,6 +18,16 @@ describe("ApiClient", () => {
     expect(new URL(seen.url).search).toBe("?status=occupied&page=2");
   });
 
+  it("tells the API which website it is (X-Website-Id, default citadel)", async () => {
+    let site: string | null = null;
+    server.use(http.get(`${API}/public/site`, ({ request }) => {
+      site = request.headers.get("x-website-id");
+      return HttpResponse.json({});
+    }));
+    await client.get("/public/site");
+    expect(site).toBe("citadel");
+  });
+
   it("turns error bodies into ApiError with code, details, location and correlation id", async () => {
     server.use(http.delete(`${API}/admin/houses/h1`, () =>
       HttpResponse.json(

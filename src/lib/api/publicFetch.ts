@@ -1,4 +1,5 @@
 import { apiBaseUrl } from "@/lib/config/apiBaseUrl";
+import { websiteHeaders } from "@/lib/config/websiteId";
 
 /** Website content is re-fetched at most once a minute, so admin changes appear on the site within about 60 seconds. */
 export const CONTENT_REVALIDATE_SECONDS = 60;
@@ -18,6 +19,7 @@ export async function publicFetch<T>(path: string, fallback: () => T, tag?: stri
   const base = apiBaseUrl();
   try {
     const response = await fetch(`${base}${path}`, {
+      headers: websiteHeaders(),
       next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: tag ? [tag] : [] },
       signal: AbortSignal.timeout(5_000),
     });
