@@ -1,7 +1,7 @@
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { buttonVariants } from "@/components/ui/Button";
+import { TrackedLink } from "@/features/analytics";
 import { CITADEL_SLUG, citadel } from "@/content/marketing/citadel";
 import { cn } from "@/lib/utils/cn";
 
@@ -65,20 +65,22 @@ export function HeroSection() {
           Diplomatic Enclave.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row md:justify-center">
-          <Link
+          <TrackedLink
             href={REGISTER_INTEREST_HREF}
+            tracking={{ name: "cta_click", tag: "hero_primary_cta" }}
             className={cn(buttonVariants({ variant: "gold", size: "lg" }))}
           >
             Register your interest
-          </Link>
-          <Link
+          </TrackedLink>
+          <TrackedLink
             href={`/properties/${CITADEL_SLUG}`}
+            tracking={{ name: "cta_click", tag: "hero_secondary_cta" }}
             className={cn(
               buttonVariants({ variant: "ghostLight", size: "lg" }),
             )}
           >
             View the residences
-          </Link>
+          </TrackedLink>
         </div>
       </div>
 

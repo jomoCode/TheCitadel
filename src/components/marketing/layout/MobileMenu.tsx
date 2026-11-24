@@ -4,6 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
+import { track, withTracking } from "@/features/analytics";
 import { useState } from "react";
 import { buttonVariants } from "@/components/ui/Button";
 import { mainNav } from "@/content/marketing/site";
@@ -62,10 +63,10 @@ export function MobileMenu() {
           </nav>
 
           <div className="container-lux safe-bottom space-y-3 border-t border-border py-5">
-            <Link href="/contact" onClick={close} className={cn(buttonVariants({ variant: "solid" }), "w-full")}>
+            <Link href="/contact" onClick={withTracking({ name: "cta_click", tag: "mobile_menu_contact" }, close)} className={cn(buttonVariants({ variant: "solid" }), "w-full")}>
               Book a viewing
             </Link>
-            <a href={telHref(contact.mobile)} className={cn(buttonVariants({ variant: "outline" }), "w-full")}>
+            <a href={telHref(contact.mobile)} onClick={() => track({ name: "cta_click", tag: "contact_phone" })} className={cn(buttonVariants({ variant: "outline" }), "w-full")}>
               <Phone className="size-3.5" aria-hidden /> Call us
             </a>
           </div>

@@ -9,4 +9,12 @@ export function websiteId(): string {
   return (process.env.NEXT_PUBLIC_WEBSITE_ID ?? "").trim().toLowerCase() || "citadel";
 }
 
-export const websiteHeaders = (): Record<string, string> => ({ [WEBSITE_HEADER]: websiteId() });
+export const websiteHeaders = (id: string = websiteId()): Record<string, string> => ({ [WEBSITE_HEADER]: id });
+
+/**
+ * Whose journal this site shows. Every estate site shares one journal (The Citadel's), managed once in the admin.
+ * From NEXT_PUBLIC_JOURNAL_WEBSITE_ID; defaults to "citadel".
+ */
+export function journalWebsiteId(): string {
+  return (process.env.NEXT_PUBLIC_JOURNAL_WEBSITE_ID ?? "").trim().toLowerCase() || "citadel";
+}

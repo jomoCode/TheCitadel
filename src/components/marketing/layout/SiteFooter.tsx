@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { footerNav, siteConfig } from "@/content/marketing/site";
+import { TrackedAnchor } from "@/features/analytics";
 import { loadSiteSettings } from "@/features/marketing/services/ContentSource";
 import { telHref } from "@/features/website/format";
 import { BrandMark } from "./BrandMark";
@@ -57,7 +58,7 @@ export async function SiteFooter() {
               <li key={link.href}><Link href={link.href} className="hover:text-white">{link.label}</Link></li>
             ))}
             {socials.map((s) => (
-              <li key={s.name}><a href={s.href} target="_blank" rel="noreferrer" className="hover:text-white">{s.name}</a></li>
+              <li key={s.name}><TrackedAnchor href={s.href} target="_blank" rel="noreferrer" tracking={{ name: "outbound_click", tag: "footer_social", meta: { network: s.name } }} className="hover:text-white">{s.name}</TrackedAnchor></li>
             ))}
           </ul>
         </div>

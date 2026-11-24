@@ -5,6 +5,7 @@ import { faqs as bundledFaqs } from "@/content/marketing/faqs";
 import { siteConfig } from "@/content/marketing/site";
 import { BlogService } from "@/features/blog/services/BlogService";
 import { publicFetch, bundledFallbackEnabled } from "@/lib/api/publicFetch";
+import { journalWebsiteId } from "@/lib/config/websiteId";
 import type { BlogBlock, BlogCategory, BlogPost, Faq, Testimonial } from "../types";
 
 // ── API shapes (backend app/contracts/marketing/post.py & content.py) ─────
@@ -31,12 +32,12 @@ export function postFromApi(p: ApiPost): BlogPost {
   };
 }
 
-// ── Journal ───────────────────────────────────────────────────────────────
+// ── Journal (shared by every estate site: see journalWebsiteId) ──────────
 export const loadBlog = cache(async (): Promise<BlogService> => {
   const fallback = bundledFallbackEnabled();
   const [posts, categories] = await Promise.all([
-    publicFetch<ApiPost[] | null>("/public/posts", () => null, "posts").then((rows) => rows?.map(postFromApi) ?? null),
-    publicFetch<BlogCategory[] | null>("/public/post-categories", () => null, "posts"),
+    publicFetch<ApiPost[] | null>("/public/posts", () => null, "posts", journalWebsiteId()).then((rows) => rows?.map(postFromApi) ?? null),
+    publicFetch<BlogCategory[] | null>("/public/post-categories", () => null, "posts", journalWebsiteId()),
   ]);
   return new BlogService(posts ?? (fallback ? blogPosts : []), categories ?? (fallback ? blogCategories : []));
 });

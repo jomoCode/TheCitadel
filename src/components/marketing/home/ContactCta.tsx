@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { buttonVariants } from "@/components/ui/Button";
+import { TrackedAnchor, TrackedLink } from "@/features/analytics";
 import { loadSiteSettings } from "@/features/marketing/services/ContentSource";
 import { cn } from "@/lib/utils/cn";
 
@@ -19,10 +19,10 @@ export async function ContactCta() {
           Arrange a private viewing at The Citadel, Asokoro — in person in Abuja, or by video from anywhere in the world.
         </p>
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-          <Link href="/contact?type=viewing" className={cn(buttonVariants({ variant: "gold", size: "lg" }))}>Book a viewing</Link>
-          <a href={`mailto:${contact.email}`} className={cn(buttonVariants({ variant: "ghostLight", size: "lg" }))}>
+          <TrackedLink href="/contact?type=viewing" tracking={{ name: "cta_click", tag: "contact_cta_viewing" }} className={cn(buttonVariants({ variant: "gold", size: "lg" }))}>Book a viewing</TrackedLink>
+          <TrackedAnchor href={`mailto:${contact.email}`} tracking={{ name: "cta_click", tag: "contact_cta_email" }} className={cn(buttonVariants({ variant: "ghostLight", size: "lg" }))}>
             {contact.email}
-          </a>
+          </TrackedAnchor>
         </div>
       </div>
     </section>

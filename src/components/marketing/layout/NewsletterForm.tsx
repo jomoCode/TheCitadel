@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { InfoTip } from "@/components/ui/InfoTip";
+import { track } from "@/features/analytics";
 
 /** Newsletter sign-up (stored as a lead with type "newsletter" once the backend is connected). */
 export function NewsletterForm() {
@@ -15,6 +16,7 @@ export function NewsletterForm() {
       className="mt-4"
       onSubmit={(event) => {
         event.preventDefault();
+        track({ name: "generate_lead", tag: "newsletter_submit", meta: { form: "newsletter" } });
         setDone(true);
       }}
     >

@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { buttonVariants } from "@/components/ui/Button";
+import { TrackedLink } from "@/features/analytics";
 import { mainNav } from "@/content/marketing/site";
 import { cn } from "@/lib/utils/cn";
 import { BrandMark } from "./BrandMark";
@@ -31,15 +31,16 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link
+          <TrackedLink
             href="/contact"
+            tracking={{ name: "cta_click", tag: "header_contact" }}
             className={cn(
               buttonVariants({ variant: transparent ? "ghostLight" : "outline", size: "sm" }),
               "hidden lg:inline-flex",
             )}
           >
             Contact
-          </Link>
+          </TrackedLink>
           <MobileMenu />
         </div>
       </div>

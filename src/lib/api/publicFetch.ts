@@ -12,14 +12,14 @@ export function bundledFallbackEnabled(): boolean {
 
 /**
  * Server-side GET of a public API path, cached by Next for a minute. If the API is slow or down it logs a located
- * warning and returns `fallback()`, so the website stays up. A missing NEXT_PUBLIC_API_URL is a setup mistake, so that
+ * warning and returns `fallback()`, so the website stays up. `website` reads another site's content (the shared journal). A missing NEXT_PUBLIC_API_URL is a setup mistake, so that
  * one does throw (the build fails loudly instead of shipping a site that silently shows nothing).
  */
-export async function publicFetch<T>(path: string, fallback: () => T, tag?: string): Promise<T> {
+export async function publicFetch<T>(path: string, fallback: () => T, tag?: string, website?: string): Promise<T> {
   const base = apiBaseUrl();
   try {
     const response = await fetch(`${base}${path}`, {
-      headers: websiteHeaders(),
+      headers: websiteHeaders(website),
       next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: tag ? [tag] : [] },
       signal: AbortSignal.timeout(5_000),
     });

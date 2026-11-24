@@ -2,13 +2,13 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { analyticsTracker } from "@/features/marketing/services/AnalyticsTracker";
+import { track } from "@/features/analytics";
 
-/** Records one first-party page view per page visited (for the Insights dashboard). No cookies, no personal data. */
+/** Records one page view per page visited (for the Insights dashboard). No cookies, no personal data. */
 export function PageViewTracker() {
   const pathname = usePathname();
   useEffect(() => {
-    if (pathname) analyticsTracker.track("page_viewed", { path: pathname });
+    if (pathname) track({ name: "page_viewed", tag: "page" });
   }, [pathname]);
   return null;
 }
