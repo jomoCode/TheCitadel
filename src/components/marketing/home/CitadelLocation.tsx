@@ -50,7 +50,7 @@ export async function CitadelLocation() {
         </div>
       </section>
 
-      <section className="container-lux grid gap-10 pt-12 pb-20 md:pt-16 md:pb-28 lg:grid-cols-[1fr_1fr] lg:items-end">
+      <section className="container-lux grid gap-10 pt-12 pb-20 md:pt-16 md:pb-28 lg:grid-cols-[1fr_1fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="The Developer"
