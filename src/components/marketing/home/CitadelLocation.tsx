@@ -53,7 +53,7 @@ export async function CitadelLocation() {
       <section className="container-lux grid gap-10 py-20 md:py-28 lg:grid-cols-[1fr_1fr] lg:items-end">
         <div>
           <SectionHeading
-            eyebrow="The developer"
+            eyebrow="The Developer"
             title="Quo Engineering & Construction"
             highlight={citadel.promise}
           />
@@ -63,9 +63,7 @@ export async function CitadelLocation() {
         </div>
         <div className="rounded-brand border border-gold/40 bg-surface p-8">
           <p className="text-eyebrow text-gold">Register your interest</p>
-          <p className="mt-3 font-display text-2xl">
-            {citadel.availability}
-          </p>
+          <p className="mt-3 font-display text-2xl">{citadel.availability}</p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link
               href={REGISTER_INTEREST_HREF}
