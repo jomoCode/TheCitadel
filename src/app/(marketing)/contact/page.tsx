@@ -31,7 +31,7 @@ export default async function ContactPage({ searchParams }: Props) {
   return (
     <>
       <PageIntro eyebrow="Contact" title="Let's talk about" highlight="your next home." intro="Send us a message and an adviser will reply within one working day. Prefer to talk now? Call us." />
-      <section className="container-lux grid gap-14 pb-24 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+      <section className="container-lux grid gap-14 pb-16 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
         <div className="space-y-8">
           <ul className="space-y-6">
             {details.map((d) => (

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils/cn";
 export async function ContactCta() {
   const { contact } = await loadSiteSettings();
   return (
-    <section className="relative isolate overflow-hidden py-24 text-white md:py-36">
+    <section className="relative isolate overflow-hidden py-16 text-white md:py-24">
       <Image src="/images/citadel/facade-front.jpg" alt="" fill sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-black/60" />
       <div className="container-lux text-center">

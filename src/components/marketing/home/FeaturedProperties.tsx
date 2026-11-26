@@ -12,7 +12,7 @@ export async function FeaturedProperties() {
   if (featured.length === 0) return null;
 
   return (
-    <section className="bg-surface-muted py-20 md:py-28">
+    <section className="bg-surface-muted py-14 md:py-20">
       <div className="container-lux flex items-end justify-between gap-6">
         <SectionHeading eyebrow="Featured developments" title="Homes for every chapter" intro="From lagoon-view apartments to detached family homes — each one designed, built and managed by Citadel." />
         <Link href="https://quoec.com/" className="text-nav hidden shrink-0 border-b border-gold pb-1 hover:text-gold md:inline-block">
@@ -20,7 +20,7 @@ export async function FeaturedProperties() {
         </Link>
       </div>
 
-      <ul className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-5 pb-4 [scrollbar-width:none] md:px-10 lg:container-lux lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-10">
+      <ul className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-5 pb-4 [scrollbar-width:none] md:px-10 lg:container-lux lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-10">
         {featured.map((property, index) => (
           <li key={property.slug} className="w-[82%] shrink-0 snap-start sm:w-[45%] lg:w-auto">
             <PropertyCard property={property} priority={index === 0} />

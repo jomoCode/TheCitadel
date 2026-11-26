@@ -13,7 +13,7 @@ const PILLARS = [
 
 export function WhyCitadel() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-14 md:py-20">
       <div className="container-lux grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
         <Reveal className="relative order-2 aspect-[4/5] overflow-hidden rounded-brand lg:order-1">
           <Image src="/images/citadel/pool-loungers.jpg" alt="Pool deck with sun loungers and outdoor lounge at The Citadel" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />

@@ -27,7 +27,7 @@ export function ComingSoonUrbane() {
     <section
       ref={ref}
       aria-labelledby="now-selling-citadel"
-      className="relative isolate overflow-hidden bg-[#140e0c] py-16 text-[#f4ede3] md:py-24 lg:py-28"
+      className="relative isolate overflow-hidden bg-[#140e0c] py-12 text-[#f4ede3] md:py-16 lg:py-20"
     >
       {/* Ambient backdrop: the same video, blurred and darkened. */}
       <video

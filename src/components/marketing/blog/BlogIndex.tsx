@@ -8,7 +8,7 @@ type BlogIndexProps = { posts: BlogPost[]; categories: BlogCategory[]; activeCat
 /** Category chips + search + post grid. Shared by /blog, category and tag pages. */
 export function BlogIndex({ posts, categories, activeCategory, query }: BlogIndexProps) {
   return (
-    <section className="container-lux pb-24">
+    <section className="container-lux pb-16">
       <div className="flex flex-col gap-4 border-b border-border pb-6 md:flex-row md:items-center md:justify-between">
         <nav aria-label="Categories" className="-mx-5 flex gap-2 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:px-0">
           {[{ slug: "", name: "All" }, ...categories].map((c) => {
@@ -31,7 +31,7 @@ export function BlogIndex({ posts, categories, activeCategory, query }: BlogInde
       {posts.length === 0 ? (
         <p className="py-24 text-center text-muted-foreground">No articles found{query ? ` for “${query}”` : ""}.</p>
       ) : (
-        <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, i) => <PostCard key={post.slug} post={post} className={i === 0 && posts.length > 2 ? "md:col-span-2" : undefined} />)}
         </div>
       )}

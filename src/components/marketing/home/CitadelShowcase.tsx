@@ -8,7 +8,7 @@ import { keyFigures } from "@/content/marketing/site";
 /** Introduces The Citadel straight under the hero: the story, key figures and the residences at a glance. */
 export function CitadelShowcase() {
   return (
-    <section id="the-citadel" className="py-20 md:py-32">
+    <section id="the-citadel" className="py-14 md:py-20">
       <div className="container-lux grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <EyebrowPill>Asokoro · Abuja</EyebrowPill>
@@ -36,7 +36,7 @@ export function CitadelShowcase() {
         </Reveal>
       </div>
 
-      <div className="container-lux mt-20">
+      <div className="container-lux mt-14">
         <dl className="grid grid-cols-2 gap-y-10 border-y border-border py-10 md:grid-cols-4">
           {keyFigures.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.08} className="text-center">
@@ -47,7 +47,7 @@ export function CitadelShowcase() {
         </dl>
       </div>
 
-      <div className="container-lux mt-20">
+      <div className="container-lux mt-14">
         <p className="text-eyebrow text-gold">The residences</p>
         <ul className="mt-6 grid gap-px overflow-hidden rounded-brand border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {citadel.residences.map((item, i) => (

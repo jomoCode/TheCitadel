@@ -64,7 +64,7 @@ export default async function PropertyPage({ params }: Params) {
 
       <div className="container-lux py-12 pb-32 md:py-20 lg:pb-24">
         <PropertyFacts property={property} />
-        <div className="mt-14 grid gap-14 lg:grid-cols-[1fr_24rem] lg:gap-16">
+        <div className="mt-10 grid gap-14 lg:grid-cols-[1fr_24rem] lg:gap-16">
           <div className="space-y-12">
             <section>
               <h2 className="font-display text-3xl">{property.units}</h2>
@@ -100,7 +100,7 @@ export default async function PropertyPage({ params }: Params) {
         </div>
 
         {related.length > 0 && (
-        <section className="mt-24">
+        <section className="mt-16">
           <h2 className="font-display text-3xl">You may also like</h2>
           <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => <li key={p.slug}><PropertyCard property={p} /></li>)}

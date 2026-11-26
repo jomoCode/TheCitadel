@@ -26,7 +26,7 @@ export default async function FaqPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageIntro eyebrow="FAQs" title="Questions," highlight="answered." intro="Can't find what you are looking for? Our advisers are a call or message away." />
-      <section className="container-lux max-w-4xl space-y-14 pb-24">
+      <section className="container-lux max-w-4xl space-y-14 pb-16">
         {topics.map((topic) => (
           <div key={topic}>
             <h2 className="text-eyebrow text-gold">{topic}</h2>

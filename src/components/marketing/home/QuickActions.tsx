@@ -12,7 +12,7 @@ const ACTIONS: { title: string; body: string; href: string; icon: typeof Home; t
 
 export function QuickActions() {
   return (
-    <section aria-label="How we can help" className="container-lux py-16 md:py-24">
+    <section aria-label="How we can help" className="container-lux py-12 md:py-16">
       <ul className="grid gap-px overflow-hidden rounded-brand border border-border bg-border md:grid-cols-3">
         {ACTIONS.map((action, i) => (
           <Reveal as="li" key={action.href} delay={i * 0.1} className="group relative bg-background p-7 transition-colors hover:bg-surface md:p-10">

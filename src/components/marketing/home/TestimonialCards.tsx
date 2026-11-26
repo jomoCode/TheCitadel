@@ -18,7 +18,7 @@ function initials(name: string) {
 /** Espresso & gold testimonial cards with a partner strip. Always dark, as a deliberate luxury band. */
 export function TestimonialCards({ testimonials }: { testimonials: Testimonial[] }) {
   return (
-    <section className="bg-[#140e0c] py-20 text-[#f4ede3] md:py-28">
+    <section className="bg-[#140e0c] py-14 text-[#f4ede3] md:py-20">
       <div className="container-lux">
         <header className="mx-auto max-w-2xl text-center">
           <EyebrowPill>Client testimonials</EyebrowPill>
@@ -31,7 +31,7 @@ export function TestimonialCards({ testimonials }: { testimonials: Testimonial[]
           </p>
         </header>
 
-        <ul className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
+        <ul className="-mx-5 mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
           {testimonials.map((t, i) => (
             <Reveal as="li" key={t.id} delay={i * 0.1} className="flex w-[85%] shrink-0 snap-center flex-col rounded-lg border border-[#33261f] bg-[#1e1613] p-7 md:w-auto">
               <Quote className="size-7 rotate-180 text-[#d4af5a]/70" aria-hidden />
@@ -50,7 +50,7 @@ export function TestimonialCards({ testimonials }: { testimonials: Testimonial[]
           ))}
         </ul>
 
-        <div className="mt-16 border-t border-[#33261f] pt-10 text-center">
+        <div className="mt-12 border-t border-[#33261f] pt-10 text-center">
           <p className="text-eyebrow text-[#d4af5a]/80">The team behind the developer</p>
           <ul className="mt-6 flex flex-wrap justify-center gap-x-10 gap-y-4 font-display text-sm text-[#a8998a]/60">
             {partners.map((partner) => (

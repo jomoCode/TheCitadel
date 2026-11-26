@@ -24,7 +24,7 @@ export default async function LegalPage({ params }: Params) {
   return (
     <>
       <PageIntro title={page.title} />
-      <article className="container-lux max-w-3xl space-y-5 pb-24 text-sm leading-relaxed text-muted-foreground md:text-base">
+      <article className="container-lux max-w-3xl space-y-5 pb-16 text-sm leading-relaxed text-muted-foreground md:text-base">
         {page.body.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
       </article>
     </>

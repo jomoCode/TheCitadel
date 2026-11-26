@@ -39,7 +39,7 @@ export default async function GuidePage({ params }: Params) {
         ))}
       </nav>
 
-      <section className="container-lux grid gap-14 py-16 md:py-24 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
+      <section className="container-lux grid gap-14 py-12 md:py-16 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
         <ol className="space-y-10">
           {guide.steps.map((step, i) => (
             <Reveal as="li" key={step.title} delay={i * 0.05} className="flex gap-6">

@@ -25,9 +25,9 @@ export default function ReferralPage() {
         </p>
       </PhotoHero>
 
-      <section className="container-lux py-20 md:py-28">
+      <section className="container-lux py-14 md:py-20">
         <SectionHeading eyebrow="How it works" title="Four simple steps" align="center" />
-        <ol className="mt-14 grid gap-8 md:grid-cols-4">
+        <ol className="mt-10 grid gap-8 md:grid-cols-4">
           {steps.map((step, i) => (
             <Reveal as="li" key={step.title} delay={i * 0.08} className="text-center">
               <span className="mx-auto flex size-14 items-center justify-center rounded-full border border-gold font-display text-xl text-gold">{i + 1}</span>
@@ -38,7 +38,7 @@ export default function ReferralPage() {
         </ol>
       </section>
 
-      <section className="bg-surface-muted py-20 md:py-28">
+      <section className="bg-surface-muted py-14 md:py-20">
         <div className="container-lux grid gap-14 lg:grid-cols-2">
           <div>
             <SectionHeading eyebrow="Good to know" title="Programme terms" />

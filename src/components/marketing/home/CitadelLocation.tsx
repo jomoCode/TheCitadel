@@ -14,7 +14,7 @@ export async function CitadelLocation() {
   const { contact } = await loadSiteSettings();
   return (
     <>
-      <section className="bg-[#140e0c] pt-12 pb-20 text-[#f4ede3] md:pt-16 md:pb-28">
+      <section className="bg-[#140e0c] pt-10 pb-14 text-[#f4ede3] md:pt-12 md:pb-20">
         <div className="container-lux grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
           <Reveal>
             <p className="text-eyebrow text-[#d4af5a]">The location</p>
@@ -50,7 +50,7 @@ export async function CitadelLocation() {
         </div>
       </section>
 
-      <section className="container-lux grid gap-10 pt-12 pb-20 md:pt-16 md:pb-28 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <section className="container-lux grid gap-10 pt-10 pb-14 md:pt-12 md:pb-20 lg:grid-cols-[1fr_1fr] lg:items-start">
         <div>
           <SectionHeading
             eyebrow="The Developer"

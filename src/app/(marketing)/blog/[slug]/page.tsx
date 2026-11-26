@@ -38,7 +38,7 @@ export default async function ArticlePage({ params }: Params) {
   return (
     <article>
       <ArticleJsonLd post={post} />
-      <header className="container-lux max-w-3xl pb-10 pt-28 text-center md:pt-40">
+      <header className="container-lux max-w-3xl pb-8 pt-24 text-center md:pt-28">
         <Link href={`/blog/category/${post.category.slug}`} className="text-eyebrow text-gold">{post.category.name}</Link>
         <h1 className="mt-5 font-display text-4xl leading-[1.1] md:text-6xl">{post.title}</h1>
         <p className="mt-6 text-sm text-muted-foreground">
@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: Params) {
       <div className="container-lux max-w-3xl py-14 md:py-20">
         <p className="mb-10 font-display text-xl leading-relaxed text-muted-foreground md:text-2xl">{post.excerpt}</p>
         <ArticleBody blocks={post.body} />
-        <footer className="mt-14 space-y-6 border-t border-border pt-8">
+        <footer className="mt-10 space-y-6 border-t border-border pt-8">
           <ul className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <li key={tag}><Link href={`/blog/tag/${encodeURIComponent(tag)}`} className="rounded-full bg-surface-muted px-3 py-1.5 text-xs hover:text-gold">#{tag}</Link></li>
@@ -64,7 +64,7 @@ export default async function ArticlePage({ params }: Params) {
       </div>
 
       {related.length > 0 && (
-        <section className="bg-surface-muted py-20">
+        <section className="bg-surface-muted py-14">
           <div className="container-lux">
             <h2 className="font-display text-3xl">Keep reading</h2>
             <div className="mt-10 grid gap-10 md:grid-cols-3">{related.map((p) => <PostCard key={p.slug} post={p} />)}</div>
